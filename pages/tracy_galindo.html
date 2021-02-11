@@ -1,0 +1,92 @@
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracy Galindo</title>
+    <link rel="stylesheet" href="../css/photographers.css">
+</head>
+
+<body>
+    <header role="banner">
+        <a href="../index.html"><img src="https://res.cloudinary.com/dps3eww2i/image/upload/v1609005020/P6-img/logo.png"
+                alt="FishEye Home Page"></a>
+    </header>
+    <main>
+        <!-- HEADER -->
+        <header>
+            <div id="info--photograph-header"></div>
+            <div id="photo-photograph-header"></div>
+        </header>
+        <!-- DROPDOWN -->
+        <nav id="container-dropDownMenu">
+            <p>Trier par</p>
+            <div class="menu-button">
+                <div class="container">
+                    <a class="filter-dropDownMenu" href="#" tabindex="0">Popularité</a>
+                    <button id="menubutton" role="button" aria-controls="menu-dropdown" aria-expanded="false"
+                        aria-haspopup="listbox">
+                        <i tabindex="0" class="fas fa-chevron-up"></i>
+                    </button>
+                </div>
+                <ul id="menu-dropdown" role="menu" aria-expanded="false" aria-labelledby="menubutton">
+                    <hr>
+                    <li role="none">
+                        <a class="filter-dropDownMenu" href="#" tabindex="0" role="menu-item">
+                            Date
+                        </a>
+                    </li>
+                    <hr>
+                    <li role="none">
+                        <a class="filter-dropDownMenu" href="#" tabindex="0" role="menu-item">
+                            Tître
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- GALLERY -->
+        <section id="gallery"></section>
+        <!-- LIGHTBOX -->
+        <div id="lighbox" aria-label="image closeup view">
+            <button id="lightbox-close">fermer</button>
+            <button id="lightbox-next">suivant</button>
+            <button id="lightbox-previous">précédent</button>
+            <div id="lightbox-container"></div>
+        </div>
+    </main>
+        <!-- FORM -->
+    <aside id="form" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="titleModal">
+        <div id="form-container">
+            <div id="close" aria-label="Fermer le formulaire de contact">
+                <div id="cross1"></div>
+                <div id="cross2"></div>
+            </div>
+            <h2 id="title-modal">Contactez-moi</h2>
+            <h2>Mimi Keel</h2>
+            <form action="" autocomplete="off">
+                <div class="field">
+                    <label for="firstName">Prénom</label>
+                    <input type="text" name="firstName" id="firstName" placeholder="Prénom">
+                </div>
+                <div class="field">
+                    <label for="lastName">Nom</label>
+                    <input type="text" name="lastName" id="lastName" placeholder="Nom">
+                </div>
+                <div class="field">
+                    <label for="email">Prénom</label>
+                    <input type="email" name="email" id="email" placeholder="exemple@email.com">
+                </div>
+                <div class="field">
+                    <label for="message">Votre message</label>
+                    <textarea type="text" name="message" id="message" placeholder="Message..."></textarea>
+                </div>
+            </form>
+            <button id="validation" type="submit">Envoyer</button>
+        </div>
+    </aside>
+
+</body>
+
+</html>
