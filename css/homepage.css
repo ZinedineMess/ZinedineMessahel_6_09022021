@@ -12,6 +12,15 @@ header img {
     width: 8rem;
 }
 
+/* TAGS */
+[data-toggle='on'] {
+    display: block;
+}
+
+[data-toggle='off'] {
+    display: none;
+}
+
 header nav ul {
     position: absolute;
     display: flex;
@@ -23,9 +32,15 @@ header nav ul {
 }
 
 header nav a {
+    font-size: 12px;
+    color: #901C1C;
+    margin: 0 0.1875rem;
+    text-decoration: none;
+}
+
+header nav li {
     text-align: center;
     font-size: 12px;
-    border: 0.5px solid #FAFAFA;
     border-radius: 0.6875rem;
     padding: 0.0625rem 0.375rem;
     color: #901C1C;
@@ -33,26 +48,26 @@ header nav a {
     text-decoration: none;
     border: 0.5px solid #C4C4C4;
     box-sizing: border-box;
-    border-radius: 11px;
     transition: all 0.2s;
     margin-bottom: 0.3rem;
 }
 
-header nav a:hover {
+header nav li:hover {
     background-color: #901C1C;
-    color: #fff
+    color: #fff;
 }
 
-header nav .selected {
+.active {
     background-color: #901C1C;
-    color: #fff
+    color: #fff;
 }
 
+/* BUTTON 'Passer au contenu' */
 #main-photographers_link {
     display: none;
     background: #DB8876;
     color: #000;
-    font-family: DM Sans;
+    font-family: 'DM Sans', sans-serif;
     text-align: center;
     position: fixed;
     text-decoration: none;
@@ -69,14 +84,14 @@ header nav .selected {
     flex-wrap: nowrap;
 }
 
-
 header h1 {
     font-size: 14px;
     width: fit-content;
     color: #901C1C;
-    font-family: 'DM Sans', sans-serif
+    font-family: 'DM Sans', sans-serif;
 }
 
+/* PHOTOGRAPHERS SECTION */
 #photographers {
     display: flex;
     flex-direction: row;
@@ -114,7 +129,6 @@ header h1 {
 
 .name {
     color: #D3573C;
-    margin-bottom: 0;
     font-size: 1.5rem;
     margin-bottom: 0.7rem;
 }
@@ -137,14 +151,14 @@ header h1 {
     text-decoration: none;
 }
 
-.tags {
+.ping {
     display: flex;
     justify-content: center;
     margin-top: 0.5rem;
     margin-right: 3rem;
 }
 
-.individual-tags {
+.tags {
     border: 0.5px solid #FAFAFA;
     border-radius: 0.6875rem;
     padding: 0.0625rem 0.375rem;
@@ -158,14 +172,14 @@ header h1 {
     list-style: none;
 }
 
-.individual-tags:hover {
+.tags:hover {
     background-color: #901C1C;
-    color: #fff
+    color: #fff;
 }
 
-.individual-tags.selected {
+.tags.selected {
     background-color: #901C1C;
-    color: #fff
+    color: #fff;
 }
 
 @media screen and (min-width: 1170px) {

@@ -1,15 +1,15 @@
 'use strict';
 ////////////////////////////////////////////////////////////
 
-import displayDefault from './displayPhotographersDefault.js'
+import displayPhotographers from './displayPhotographers.js';
 
 
 // FETCH API FISHEYE
 export default function getApiFishEye() {
-    fetch("./../ApiFishEye.json")
+    fetch("./../Api/FishEye/photographers.json")
         .then(response => response.json())
         .then(data => {
-            displayDefault(data)
+            displayPhotographers(data)
         })
         .catch(error => console.log(error))
-};
+}
