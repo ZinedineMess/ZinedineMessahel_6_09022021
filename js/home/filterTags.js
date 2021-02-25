@@ -2,7 +2,9 @@
 ////////////////////////////////////////////////////////////
 
 document.addEventListener('click', function (e) {
+
     const button = e.target;
+
     // FILTER THE TAG
     const filter = button.getAttribute('data-filter');
     const tag = button.getAttribute('data-filter-tag');
@@ -29,8 +31,8 @@ function filterTag(filter, tag) {
 function addActiveClass() {
 
     const buttons = document.querySelectorAll("nav li");
+
     buttons.forEach(btn => btn.addEventListener("click", () => {
-        buttons.forEach(btn => btn.classList.remove('active'));
         btn.classList.add('active');
     }));
 }

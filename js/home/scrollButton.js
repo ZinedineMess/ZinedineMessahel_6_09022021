@@ -3,6 +3,7 @@
 
 // SCROLL FUNCTION
 export const button = document.getElementById("main-photographers_link");
+
 const scrollButton = () => {
     const y = window.scrollY;
     if (y >= 130) {
@@ -13,4 +14,5 @@ const scrollButton = () => {
 };
 
 window.addEventListener("scroll", scrollButton);
+
 export default scrollButton

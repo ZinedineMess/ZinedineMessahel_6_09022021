@@ -1,0 +1,7 @@
+'use strict';
+////////////////////////////////////////////////////////////
+
+import getApiFishEye from './getApiFishEye.js';
+
+
+getApiFishEye();

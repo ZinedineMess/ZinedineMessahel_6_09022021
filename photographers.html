@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mimi Keel</title>
+    <title>FishEye</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/photographers.css">
+    <script type='module' src="js/photographersPage/main.js"></script>
 </head>
 
 <body>
@@ -16,8 +18,9 @@
     <main>
         <!-- HEADER -->
         <header>
-            <div id="info-photograph-header"></div>
+            <section id="info-photographer-header"></section>
         </header>
+
         <!-- DROPDOWN -->
         <nav id="container-dropDownMenu">
             <p>Trier par</p>
@@ -45,8 +48,10 @@
                 </ul>
             </div>
         </nav>
+
         <!-- GALLERY -->
         <section id="gallery"></section>
+
         <!-- LIGHTBOX -->
         <div id="lighbox" aria-label="image closeup view">
             <button id="lightbox-close">fermer</button>
@@ -55,7 +60,8 @@
             <div id="lightbox-container"></div>
         </div>
     </main>
-        <!-- FORM -->
+
+    <!-- FORM -->
     <aside id="form" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="titleModal">
         <div id="form-container">
             <div id="close" aria-label="Fermer le formulaire de contact">
@@ -85,7 +91,7 @@
             <button id="validation" type="submit">Envoyer</button>
         </div>
     </aside>
-<script type='module' src="js/photographers-page.js"></script>
+
 </body>
 
 </html>
