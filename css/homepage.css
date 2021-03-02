@@ -12,15 +12,6 @@ header img {
     width: 8rem;
 }
 
-/* TAGS */
-[data-toggle='on'] {
-    display: block;
-}
-
-[data-toggle='off'] {
-    display: none;
-}
-
 header nav ul {
     position: absolute;
     display: flex;
@@ -38,9 +29,8 @@ header nav a {
     text-decoration: none;
 }
 
-header nav li {
-    text-align: center;
-    font-size: 12px;
+ul li {
+    border: 0.5px solid #FAFAFA;
     border-radius: 0.6875rem;
     padding: 0.0625rem 0.375rem;
     color: #901C1C;
@@ -48,16 +38,18 @@ header nav li {
     text-decoration: none;
     border: 0.5px solid #C4C4C4;
     box-sizing: border-box;
+    border-radius: 11px;
     transition: all 0.2s;
-    margin-bottom: 0.3rem;
+    list-style: none;
 }
 
-header nav li:hover {
+ul li:hover {
     background-color: #901C1C;
     color: #fff;
 }
 
-.active {
+nav li.actived,
+ul li.actived {
     background-color: #901C1C;
     color: #fff;
 }
@@ -103,7 +95,7 @@ header h1 {
     margin-bottom: 5rem;
 }
 
-.photographer-container {
+.article article {
     width: 22rem;
     margin: 0.5rem;
     padding: 0.3rem;
@@ -147,39 +139,15 @@ header h1 {
     margin: 0;
 }
 
-.photographer-container a {
+.article article a {
     text-decoration: none;
 }
 
-.ping {
+.filter {
     display: flex;
     justify-content: center;
     margin-top: 0.5rem;
     margin-right: 3rem;
-}
-
-.tags {
-    border: 0.5px solid #FAFAFA;
-    border-radius: 0.6875rem;
-    padding: 0.0625rem 0.375rem;
-    color: #901C1C;
-    margin: 0 0.1875rem;
-    text-decoration: none;
-    border: 0.5px solid #C4C4C4;
-    box-sizing: border-box;
-    border-radius: 11px;
-    transition: all 0.2s;
-    list-style: none;
-}
-
-.tags:hover {
-    background-color: #901C1C;
-    color: #fff;
-}
-
-.tags.selected {
-    background-color: #901C1C;
-    color: #fff;
 }
 
 @media screen and (min-width: 1170px) {

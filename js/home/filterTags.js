@@ -1,39 +1,52 @@
-'use strict';
-////////////////////////////////////////////////////////////
+"use strict"
+////////////////////////////////////////////////////////////////////
 
-document.addEventListener('click', function (e) {
+window.addEventListener("load", (event) => {
+    const filtres = document.querySelector('nav');
+    const articles = document.querySelectorAll('.article article');
 
-    const button = e.target;
+    function getFiltresActifs() {
+        let currentFilters = document.querySelectorAll('nav li.actived');
+        let filterSelected = [];
 
-    // FILTER THE TAG
-    const filter = button.getAttribute('data-filter');
-    const tag = button.getAttribute('data-filter-tag');
-    filterTag(filter, tag);
-})
+        currentFilters.forEach(function (currentFilter) {
+            filterSelected.push(currentFilter.getAttribute("data-filter"));
+        });
 
-// FILTER TAG
-function filterTag(filter, tag) {
-    const items = document.querySelectorAll('.' + filter + ' > article');
-
-    for (let i = 0; i < items.length; i++) {
-        const itemTags = items[i].getAttribute('data-tags');
-
-        // CATCH CASE WITH NO TAGS
-        if (itemTags != null) {
-            if (itemTags.indexOf(tag) < 0) {
-                items[i].setAttribute('data-toggle', 'off');
-            }
-        }
+        return filterSelected;
     }
-}
 
-// ADD ACTIVE CLASS TO TAGS
-function addActiveClass() {
+    function possedeTousLesFiltres(article) {
+        let filters = getFiltresActifs();
+        let classValue = article.classList.value;
+        let classes = classValue.split(' ');
+        let intersection = filters.filter(
+            x => classes.includes(x)
+        );
 
-    const buttons = document.querySelectorAll("nav li");
+        return filters.length == intersection.length;
+    }
 
-    buttons.forEach(btn => btn.addEventListener("click", () => {
-        btn.classList.add('active');
-    }));
-}
-addActiveClass();
+    function refreshArticles() {
+        articles.forEach(function (article) {
+            if (possedeTousLesFiltres(article)) {
+                article.style.display = 'block';
+            } else {
+                article.style.display = 'none';
+            }
+        });
+    }
+
+    filtres.addEventListener('click', event => {
+        let classValue = event.target.classList.value;
+
+        if (-1 === classValue.indexOf('actived')) {
+            event.target.classList.add('actived')
+        } else {
+            event.target.classList.remove('actived')
+        }
+
+        refreshArticles();
+    });
+
+});
