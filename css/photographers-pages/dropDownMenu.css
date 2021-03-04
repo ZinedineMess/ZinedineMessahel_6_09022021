@@ -1,0 +1,70 @@
+/* DROPDOWN */
+.works-sort {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .works-sort {
+        display: block;
+        margin-left: 2rem;
+        margin-top : 2rem;
+    }
+
+    #sort-text {
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-right: 1.5625rem;
+    }
+
+    .sort-btn {
+        background: #901c1c;
+        color: #fff;
+        position: absolute;
+        top: 25.2rem;
+        left: 11rem;
+        width: 10.3125rem;
+        border: none;
+        padding: 0.625rem 1.25rem;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    ul.hidden-sort {
+        background: #901c1c;
+        position: absolute;
+        z-index: 10;
+        top: 180px;
+        left: 138px;
+        width: 11rem;
+        border-radius: 5px;
+        color: #fff;
+        padding: 0;
+        display: none;
+    }
+
+    .hidden-sort li {
+        padding: 1.25rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #fff;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+    }
+
+    .arrow-down-open:hover,
+    ul.hidden-sort li:hover {
+        background-color: #651414;
+        cursor: pointer;
+    }
+
+    ul.hidden-sort li:nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px 5px 0 0;
+    }
+}

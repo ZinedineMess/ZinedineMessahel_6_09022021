@@ -13,3 +13,11 @@ body {
     margin-left: 2rem;
     margin-right: 2rem;
 }
+
+a {
+    text-decoration: none
+}
+
+ul {
+    list-style: none
+}

@@ -1,11 +1,13 @@
 "use strict"
 ////////////////////////////////////////////////////////////////////
 
+// FUNCTION FILTER TAGS
 window.addEventListener("load", (event) => {
     const filtres = document.querySelector('nav');
     const articles = document.querySelectorAll('.article article');
 
-    function getFiltresActifs() {
+    function getActivesFilters() 
+    {
         let currentFilters = document.querySelectorAll('nav li.actived');
         let filterSelected = [];
 
@@ -16,8 +18,9 @@ window.addEventListener("load", (event) => {
         return filterSelected;
     }
 
-    function possedeTousLesFiltres(article) {
-        let filters = getFiltresActifs();
+    function ownAllFilters(article) 
+    {
+        let filters = getActivesFilters();
         let classValue = article.classList.value;
         let classes = classValue.split(' ');
         let intersection = filters.filter(
@@ -27,9 +30,10 @@ window.addEventListener("load", (event) => {
         return filters.length == intersection.length;
     }
 
-    function refreshArticles() {
+    function refreshArticles() 
+    {
         articles.forEach(function (article) {
-            if (possedeTousLesFiltres(article)) {
+            if (ownAllFilters(article)) {
                 article.style.display = 'block';
             } else {
                 article.style.display = 'none';

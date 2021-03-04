@@ -15,4 +15,4 @@ const scrollButton = () => {
 
 window.addEventListener("scroll", scrollButton);
 
-export default scrollButton
+export default scrollButton;

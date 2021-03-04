@@ -4,6 +4,7 @@
 import displayPhotographers from './home/displayPhotographers.js';
 import headerPhotographerProfil from './photographersPage/headerPhotographerProfil.js';
 
+
 // FETCH API FISHEYE HOMEPAGE
 export function getApiFishEyeHome() {
     
