@@ -1,0 +1,28 @@
+/* BUTTON 'Passer au contenu' */
+#main-photographers_link {
+    display: none;
+    background: #DB8876;
+    color: #000;
+    font-family: 'DM Sans', sans-serif;
+    text-align: center;
+    position: fixed;
+    text-decoration: none;
+    border-radius: 0.3125rem;
+    transition: all 0.4s linear;
+    top: 5%;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 182px;
+    padding: 5px;
+    font-weight: 700;
+    font-size: 18px;
+    flex-wrap: nowrap;
+}
+
+header h1 {
+    font-size: 14px;
+    width: fit-content;
+    color: #901C1C;
+    font-family: 'DM Sans', sans-serif;
+}

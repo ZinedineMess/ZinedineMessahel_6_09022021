@@ -1,0 +1,78 @@
+/* PHOTOGRAPHERS SECTION */
+#photographers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    margin-top: 7rem;
+    margin-bottom: 5rem;
+}
+
+.article article {
+    width: 22rem;
+    margin: 0.5rem;
+    padding: 0.3rem;
+    text-align: center;
+}
+
+#photographers img {
+    width: 11rem;
+    height: 11rem;
+    object-fit: cover;
+    background-color: rgb(89, 206, 38);
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 0.8rem rgba(134, 134, 134, 0.432);
+}
+
+#photographers img:hover {
+    box-shadow: 0 0 0.8rem rgba(134, 134, 134, 0.432);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.name {
+    color: #D3573C;
+    font-size: 1.5rem;
+    margin-bottom: 0.7rem;
+}
+
+.price {
+    color: #757575;
+    margin: 0;
+}
+
+.location {
+    color: #901C1C;
+    margin: 0.2rem;
+}
+
+.tagline {
+    margin: 0;
+}
+
+.article article a {
+    text-decoration: none;
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+    margin-right: 3rem;
+}
+
+@media screen and (min-width: 1170px) {
+    #photographers {
+        margin-top: 5rem;
+    }
+
+    .tags {
+        display: flex;
+        justify-content: center;
+        margin-right: 0;
+    }
+}
