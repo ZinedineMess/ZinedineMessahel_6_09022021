@@ -1,11 +1,11 @@
-"use strict";
-/////////////////////////////////////////////////////////////
+'use strict';
+/////////////////////////////////////////
 
 // SCROLL FUNCTION
-export const button = document.getElementById("main-photographers_link");
-
-const scrollButton = () => {
+export default function scrollButton() {
+    const button = document.getElementById("main-photographers_link");
     const y = window.scrollY;
+
     if (y >= 130) {
         button.style.display = "block"
     } else {
@@ -14,5 +14,3 @@ const scrollButton = () => {
 };
 
 window.addEventListener("scroll", scrollButton);
-
-export default scrollButton;

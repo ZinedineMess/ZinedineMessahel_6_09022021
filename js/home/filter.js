@@ -1,14 +1,17 @@
-"use strict"
-////////////////////////////////////////////////////////////////////
+'use strict';
+/////////////////////////////////////////
+
+import PhotographersHome from './PhotographersHome.js';
 
 // FUNCTION FILTER TAGS
-window.addEventListener("load", (event) => {
-    const filtres = document.querySelector('nav');
+export default async function filter() {
+    await (new PhotographersHome()).displayPhotographers();
+    const filtres = document.querySelector('ul');
     const articles = document.querySelectorAll('.article article');
 
-    function getActivesFilters() 
-    {
-        let currentFilters = document.querySelectorAll('nav li.actived');
+    // GET ACTIVE FILTER
+    function getActiveFilters() {
+        let currentFilters = document.querySelectorAll('ul li.actived');
         let filterSelected = [];
 
         currentFilters.forEach(function (currentFilter) {
@@ -18,9 +21,9 @@ window.addEventListener("load", (event) => {
         return filterSelected;
     }
 
-    function ownAllFilters(article) 
-    {
-        let filters = getActivesFilters();
+    // OWN ALL FILTERS
+    function ownAllFilters(article) {
+        let filters = getActiveFilters();
         let classValue = article.classList.value;
         let classes = classValue.split(' ');
         let intersection = filters.filter(
@@ -30,8 +33,8 @@ window.addEventListener("load", (event) => {
         return filters.length == intersection.length;
     }
 
-    function refreshArticles() 
-    {
+    // GET ACTIVE FILTER
+    function refreshArticles() {
         articles.forEach(function (article) {
             if (ownAllFilters(article)) {
                 article.style.display = 'block';
@@ -41,6 +44,7 @@ window.addEventListener("load", (event) => {
         });
     }
 
+    // EVENT LISTENER ON CLICK LI
     filtres.addEventListener('click', event => {
         let classValue = event.target.classList.value;
 
@@ -52,5 +56,6 @@ window.addEventListener("load", (event) => {
 
         refreshArticles();
     });
+}
 
-});
+filter();

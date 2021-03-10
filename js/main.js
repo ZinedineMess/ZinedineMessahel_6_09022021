@@ -1,13 +1,12 @@
-"use strict";
-////////////////////////////////////////////////////////////
+'use strict';
+/////////////////////////////////////////
 
-import {
-    getApiFishEyeHome,
-    getApiFishEyePhotographersPage
-} from './getApiFishEye.js';
-import scrollButton from './home/scrollButton.js';
-import {} from './home/filterTags.js';
+// HOME
+import {} from './home/scrollButton.js';
+import {} from './home/filter.js';
 
-getApiFishEyeHome();
-getApiFishEyePhotographersPage();
-scrollButton();
+// PHOTOGRAPHERS PAGES
+import PhotographerProfil from './photographers-page/PhotographerProfil.js';
+import {} from './photographers-page/dropDown.js';
+
+(new PhotographerProfil()).displayPhotographerProfil();

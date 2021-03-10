@@ -1,5 +1,5 @@
-"use strict"
-////////////////////////////////////////////////////////
+'use strict';
+/////////////////////////////////////////
 
 // DOM ELEMENTS
 const arrowClose = document.getElementsByClassName('arrow-up-close');
@@ -9,7 +9,7 @@ const arrowOpen = document.getElementsByClassName('arrow-down-open');
 function openDropDown() {
     let hiddenSort = document.getElementsByClassName('hidden-sort');
 
-    hiddenSort[0].style.display = "block";
+    hiddenSort[0].style.display = 'block';
 }
 
 // CLOSE DROPDOWN MENU
