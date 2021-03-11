@@ -18,11 +18,5 @@
     font-weight: 700;
     font-size: 18px;
     flex-wrap: nowrap;
-}
-
-header h1 {
-    font-size: 14px;
-    width: fit-content;
-    color: #901C1C;
-    font-family: 'DM Sans', sans-serif;
+    z-index: 1;
 }

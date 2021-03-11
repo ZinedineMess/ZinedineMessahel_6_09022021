@@ -22,7 +22,7 @@
         position: absolute;
         top: 25.2rem;
         left: 11rem;
-        width: 10.3125rem;
+        width: 10rem;
         border: none;
         padding: 0.625rem 1.25rem;
         border-radius: 5px;
@@ -37,8 +37,8 @@
         background: #901c1c;
         position: absolute;
         z-index: 10;
-        top: 180px;
-        left: 138px;
+        top: 385px;
+        left: 167px;
         width: 11rem;
         border-radius: 5px;
         color: #fff;

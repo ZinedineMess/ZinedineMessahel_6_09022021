@@ -22,39 +22,15 @@ header nav ul {
     right: 20px;
 }
 
-header nav a {
-    font-size: 12px;
+header h1 {
+    font-size: 14px;
+    width: fit-content;
     color: #901C1C;
-    margin: 0 0.1875rem;
-    text-decoration: none;
-}
-
-ul li {
-    border: 0.5px solid #FAFAFA;
-    border-radius: 0.6875rem;
-    padding: 0.0625rem 0.375rem;
-    color: #901C1C;
-    margin: 0 0.1875rem;
-    text-decoration: none;
-    border: 0.5px solid #C4C4C4;
-    box-sizing: border-box;
-    border-radius: 11px;
-    transition: all 0.2s;
-    list-style: none;
-}
-
-ul li:hover {
-    background-color: #901C1C;
-    color: #fff;
-}
-
-nav li.actived,
-ul li.actived {
-    background-color: #901C1C;
-    color: #fff;
+    font-family: 'DM Sans', sans-serif;
 }
 
 @media screen and (min-width: 1170px) {
+
     /* HEADER */
     header {
         margin-top: 0;

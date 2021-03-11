@@ -1,16 +1,14 @@
 'use strict';
-////////////////////////////////////////////////
+/////////////////////////////////////////
 
-import ApiFishEye from './data/getApiFishEye.js';
+// HOME
+import {} from './home/scrollButton.js';
+import {} from './home/filter.js';
 
-let data = new ApiFishEye.getDataFishEye();  // ca c'est pas bon
+// PHOTOGRAPHERS PAGES
+import PhotographerProfil from './photographers-page/PhotographerProfil.js';
+import {} from './photographers-page/dropDown.js';
+import photographersWorks from './photographers-page/worksPhotographers.js';
 
-console.log(data);
-
-
-/* j'aimerai récuperer les données 'data, dataPhotographers et dataMedias' présente dans ma classe ApiFishEye
-en dehors de ma classe pour les utiliser dans toutes mes autres classes du projet. 
-Pour par exemple displayPhotographer.. etc 
-*/
-
-
+(new PhotographerProfil()).displayPhotographerProfil();
+photographersWorks();
