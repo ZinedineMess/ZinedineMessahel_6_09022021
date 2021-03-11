@@ -23,7 +23,7 @@ class ImageFactory {
     }
 
     // CREATE FULL ELEMENT IMAGE
-    createFullElt(){
+    createFullElt() {
         let eltImage = createEltImg(`images/${this.src}`, this.alt);
         eltImage.setAttribute("id", "current-media-lightbox");
 
@@ -57,13 +57,12 @@ class VideoFactory {
     }
 
     // CREATE FULL ELEMENT VIDEO
-    createFullElt(){
+    createFullElt() {
         let eltVideo = createEltVideo(`videos/${this.src}`, this.alt);
         eltVideo.setAttribute("id", "current-media-lightbox");
 
         return eltVideo;
     }
-
 }
 
 export default class MediaFactory {

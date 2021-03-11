@@ -1,9 +1,11 @@
 'use strict';
 /////////////////////////////////////////
 
+/*
 // HOME
 import {} from './home/scrollButton.js';
 import {} from './home/filter.js';
+*/
 
 // PHOTOGRAPHERS PAGES
 import PhotographerProfil from './photographers-page/PhotographerProfil.js';
