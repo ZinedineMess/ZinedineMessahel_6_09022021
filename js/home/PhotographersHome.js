@@ -6,8 +6,8 @@ import ApiFishEye from '../data/ApiFishEye.js';
 // DISPLAY ALL PHOTOGRAPHERS BY DEFAULT
 export default class PhotographersHome {
     async displayPhotographers() {
-        let result = await (new ApiFishEye()).getDataFishEye();
-        let photographers = result.photographers;
+        let data = await (new ApiFishEye()).getDataFishEye();
+        let photographers = data.photographers;
         photographers.map(photographe => {
             const sectionPhotographers = document.getElementById('photographers');
             const articlePhotographers = document.createElement('article');

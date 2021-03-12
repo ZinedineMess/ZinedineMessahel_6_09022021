@@ -6,8 +6,8 @@ import ApiFishEye from '../data/ApiFishEye.js';
 // DISPLAY PHOTOGRAPHERS PROFILS
 export default class PhotographerProfil {
     async displayPhotographerProfil() {
-        let result = await (new ApiFishEye()).getDataFishEye();
-        let photographersData = result.photographers;
+        let data = await (new ApiFishEye()).getDataFishEye();
+        let photographersData = data.photographers;
         const id = window.location.search.split('id=')[1];
         const photographers = !id ? photographersData : photographersData.filter(photographer => photographer.id == id);
         photographers.forEach(element => {

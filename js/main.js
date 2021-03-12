@@ -1,16 +1,14 @@
 'use strict';
 /////////////////////////////////////////
 
-/*
 // HOME
 import {} from './home/scrollButton.js';
 import {} from './home/filter.js';
-*/
 
 // PHOTOGRAPHERS PAGES
 import PhotographerProfil from './photographers-page/PhotographerProfil.js';
 import {} from './photographers-page/dropDown.js';
-import photographersWorks from './photographers-page/worksPhotographers.js';
+import Works from './photographers-page/Works.js';
 
 (new PhotographerProfil()).displayPhotographerProfil();
-photographersWorks();
+(new Works()).photographersWorks();
