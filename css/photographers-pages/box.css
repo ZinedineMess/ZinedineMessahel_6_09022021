@@ -1,0 +1,21 @@
+#box {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    #box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        background: #db8876;
+        width: 23.5rem;
+        height: 4.375rem;
+        border-radius: 0.3125rem;
+        padding: 0 2.1875rem;
+        font-weight: 500;
+        font-size: 1.2em;
+        bottom: 0;
+        right: 2.5rem;
+    }
+}

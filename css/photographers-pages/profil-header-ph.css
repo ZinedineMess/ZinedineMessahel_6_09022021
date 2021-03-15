@@ -65,14 +65,14 @@
 }
 
 @media (min-width: 1200px) {
-    main header {
+    #ph-profil {
         background-color: #FAFAFA;
         margin: 0 20px;
     }
 }
 
 @media (min-width: 900px) {
-    main header {
+    #ph-profil {
         padding: 2rem 2rem 2rem 2rem;
         background: #fafafa;
     }

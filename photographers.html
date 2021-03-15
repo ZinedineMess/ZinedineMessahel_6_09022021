@@ -19,7 +19,7 @@
     </header>
     <main>
         <!-- HEADER -->
-        <header>
+        <header id="ph-profil">
             <section id="ph-profil-header"></section>
         </header>
 
@@ -45,6 +45,41 @@
 
         <!-- WORK -->
         <section id='ph-works'></section>
-    </body>
+
+        <!-- BOX -->
+        <div id="box"></div>
+
+        <!--MODAL-->
+        <div role="dialog" id="form-dialog" aria-label="contact me form" aria-labelledby="form-title"
+            aria-hidden="false">
+            <form action="photographer-page.html" method="POST" id="contact-form">
+                <header aria-label="contact form header">
+                    <h1 id="form-title">
+                        <span>Contactez-moi</span>
+                        <span id="ph-form-name">Ellie-Rose Wilkens</span>
+                    </h1>
+                    <button id="close-btn" title="Close form" type="button">
+                        <span class="fas fa-times close-form-icon" aria-hidden="true"></span>
+                    </button>
+                </header>
+                <!-- FIRST NAME -->
+                <label for="first-name" id="label-firstname">Prénom</label>
+                <input name="first-name" id="first-name" aria-labelledby="label-firstname">
+                <!-- LAST NAME -->
+                <label for="last-name" id="label-lastname">Nom</label>
+                <input name="last-name" id="last-name" aria-labelledby="label-lastname">
+                <!-- EMAIL -->
+                <label for="email" id="label-email">Email</label>
+                <input type="email" name="email" id="email" aria-labelledby="label-email">
+                <!-- MESSAGE -->
+                <label for="message" id="label-message">Votre message</label>
+                <textarea name="message" id="message" cols="20" rows="5" aria-labelledby="label-message"></textarea>
+                <!-- SUBMIT -->
+                <input type="submit" value="Envoyer" class="form-submit" title="Send">
+            </form>
+        </div>
+    </main>
+
+</body>
 
 </html>

@@ -22,7 +22,8 @@ export default class Works {
                 <h2 class="ph-work-title">${element.photoName}</h2>
                 <span class="ph-work-price">${element.price} €</span>
                 <span class="ph-work-like">${element.likes}
-                    <i class="fas fa-heart" aria-label='likes' role="button"></i></span>
+                <i class="fas fa-heart" aria-label='likes' role="button"></i>
+                </span>
             </div>
                 `
                 articlePhWork.innerHTML = workTemplate;
@@ -30,5 +31,17 @@ export default class Works {
                 articlePhWork.classList.add("ph-work-elt");
             }
         })
+    }
+
+    async boxLikesAndPrice() {
+        await this.photographersWorks();
+        const box = document.getElementById('box');
+        const boxTemplate = `
+        <span id="total-likes">#
+            <i class="fas fa-heart" aria-label="likes"></i>
+        </span>
+        <span># / jour</span>
+        `
+        box.innerHTML = boxTemplate;
     }
 }
