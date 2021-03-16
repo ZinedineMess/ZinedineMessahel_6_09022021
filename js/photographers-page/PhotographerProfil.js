@@ -18,13 +18,13 @@ export default class PhotographerProfil {
                     <h2>${element.name}</h2>
                     <p class="ph-city">${element.city}, ${element.country}</p>
                     <p class="ph-tagline">${element.tagline}</p>
-                    <p >${element.tags.map(tag => `<a class="ph-tags" href="index.html?id=${tag}">#${tag}</a>`).join(" ")}</p>
+                    <p >${element.tags.map(tag => `<a class="ph-tags" href="index.html">#${tag}</a>`).join(" ")}</p>
                 </div>
                 <button id="ph-contact">Contactez-moi</button>
                 <img src="${element.portrait}" alt="photo de ${element.name}">
             </article>
             `
-            
+
             sectionPhotographerProfil.innerHTML = templatePhotographerProfil;
         })
     }

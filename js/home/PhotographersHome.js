@@ -22,7 +22,7 @@ export default class PhotographersHome {
             <p class="tagline">${photographe.tagline}</p>
             <p class="price">${photographe.price}€/jour</p>
             <ul class="filter">${photographe.tags.map(tag =>
-                `<li data-filter="${tag}">#${tag}</li>`).join(" ")}</ul>
+                `<li data-filter="${tag}">#${tag}</li>`).join(" ")}</ul> 
             </article>
             `
 

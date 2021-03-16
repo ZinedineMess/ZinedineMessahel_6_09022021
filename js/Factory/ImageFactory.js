@@ -2,7 +2,7 @@
 /////////////////////////////////////////
 
 export default class ImageFactory {
-    
+
     // CREATE ELEMENT IMG
     createHTML(element) {
         let eltImage = document.createElement('img');
