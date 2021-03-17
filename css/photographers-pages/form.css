@@ -1,6 +1,6 @@
 #form-dialog {
     display: none;
-    position: fixed;
+    position: absolute;
     min-width: 18.75rem;
     max-width: 42rem;
     width: 100%;
@@ -76,6 +76,36 @@
 
 #contact-form .form-submit:hover {
     cursor: pointer;
+}
+
+.formData {
+    display: flex;
+    flex-direction: column;
+}
+
+.formData[data-error]::after {
+    content: attr(data-error);
+    font-size: 1em;
+    color: #901c1c;
+    display: block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    text-align: left;
+    line-height: 0.3;
+    opacity: 0;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.formData[data-error-visible="true"]::after {
+    opacity: 1;
+}
+
+input[data-error]::after {
+    content: attr(data-error);
+    font-size: 0.6em;
+    color: #901c1c;
 }
 
 @media (min-width: 600px) {

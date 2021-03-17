@@ -19,10 +19,6 @@
     font-weight: 400;
 }
 
-.ph-work-elt a {
-    color: #901c1c;
-}
-
 .ph-work-elt-text {
     display: flex;
     justify-content: space-between;
@@ -34,12 +30,16 @@
     width: 14.0625rem;
 }
 
-.ph-work-elt .fa-heart {
-    margin-left: 0.3125rem;
-}
-
 .ph-work-elt .fa-heart:hover {
     cursor: pointer;
+}
+
+.btn-like {
+    border: none;
+    background: none;
+    color: #901c1c;
+    font-size: 1.1rem;
+    margin-left: -0.3rem;
 }
 
 .ph-work-elt img,

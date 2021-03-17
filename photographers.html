@@ -63,17 +63,25 @@
                     </button>
                 </header>
                 <!-- FIRST NAME -->
-                <label for="first-name" id="label-firstname">Prénom</label>
-                <input name="first-name" id="first-name" aria-labelledby="label-firstname">
+                <div class="formData" data-error="Vous devez entrer votre prénom." data-error-visible="false">
+                    <label for="first-name" id="label-firstname">Prénom</label>
+                    <input name="first-name" id="first-name" aria-labelledby="label-firstname">
+                </div>
                 <!-- LAST NAME -->
-                <label for="last-name" id="label-lastname">Nom</label>
-                <input name="last-name" id="last-name" aria-labelledby="label-lastname">
+                <div class="formData" data-error="Vous devez entrer votre nom." data-error-visible="false">
+                    <label for="last-name" id="label-lastname">Nom</label>
+                    <input name="last-name" id="last-name" aria-labelledby="label-lastname">
+                </div>
                 <!-- EMAIL -->
-                <label for="email" id="label-email">Email</label>
-                <input type="email" name="email" id="email" aria-labelledby="label-email">
+                <div class="formData" data-error="Vous devez entrer un email valide." data-error-visible="false">
+                    <label for="email" id="label-email">Email</label>
+                    <input type="email" name="email" id="email" aria-labelledby="label-email">
+                </div>
                 <!-- MESSAGE -->
-                <label for="message" id="label-message">Votre message</label>
-                <textarea name="message" id="message" cols="20" rows="5" aria-labelledby="label-message"></textarea>
+                <div class="formData" data-error="Vous devez entrer votre message." data-error-visible="false">
+                    <label for="message" id="label-message">Votre message</label>
+                    <textarea name="message" id="message" cols="20" rows="5" aria-labelledby="label-message"></textarea>
+                </div>
                 <!-- SUBMIT -->
                 <input type="submit" value="Envoyer" class="form-submit" title="Send">
             </form>

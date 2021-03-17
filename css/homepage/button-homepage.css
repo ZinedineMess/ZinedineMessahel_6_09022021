@@ -8,8 +8,7 @@
     position: fixed;
     text-decoration: none;
     border-radius: 0.3125rem;
-    transition: all 0.4s linear;
-    top: 5%;
+    top: 2%;
     right: 0;
     left: 0;
     margin: 0 auto;
@@ -19,4 +18,9 @@
     font-size: 18px;
     flex-wrap: nowrap;
     z-index: 1;
+}
+
+#main-photographers_link:hover {
+    background: #901C1C;
+    color: #fff;
 }
