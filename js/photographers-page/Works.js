@@ -50,31 +50,32 @@ export default class Works {
         box.innerHTML = boxTemplate;
     }
 
-    async incrementLikes() {
+    async likesUnderWork() {
         await this.photographersWorks();
-        const heartBtnLike = document.getElementsByClassName('btn-like');
-        const counter = document.querySelector('.like-counter');
+        let phImageLike = document.getElementsByClassName('ph-work-elt-text');
 
-        for (let i = 0; i < heartBtnLike.length; i++) {
-            let likes = 88;
+        for (let i = 0; i < phImageLike.length; i++) {
+            let btnLike = document.getElementsByClassName('btn-like');
+            let counterLike = phImageLike[i].querySelector('.like-counter');
+            let likesValue = counterLike.getAttribute('data-value');
             let isLike = false;
 
-            if (heartBtnLike) {
-                heartBtnLike[i].addEventListener('click', () => {
-
-                    if (!isLike) {
-                        likes++;
-                        counter.innerHTML = likes;
-                        isLike = true;
-                    } else {
-                        likes--;
-                        counter.innerHTML = likes;
-                        isLike = false;
-                    }
-                })
-            } else {
-                console.log('erreur');
-            }
+            btnLike[i].addEventListener('click', () => {
+                if (!isLike) {
+                    likesValue++;
+                    counterLike.innerHTML = likesValue;
+                    isLike = true;
+                } else {
+                    likesValue--;
+                    counterLike.innerHTML = likesValue;
+                    isLike = false;
+                }
+            })
         }
+    }
+
+    async likes() {
+        this.boxLikesAndPrice();
+        this.likesUnderWork();
     }
 }
