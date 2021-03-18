@@ -43,7 +43,6 @@ export default class Works {
         const box = document.getElementById('box');
         const boxTemplate = `
         <span id="total-likes">#
-            <i class="fas fa-heart" aria-label="likes"></i>
         </span>
         <span># / jour</span>
         `
@@ -74,8 +73,21 @@ export default class Works {
         }
     }
 
-    async likes() {
-        this.boxLikesAndPrice();
+    async allLikes() {
+        await this.boxLikesAndPrice();
         this.likesUnderWork();
+        let totalLikes = document.getElementById('total-likes');
+        let phImageLike = document.getElementsByClassName('ph-work-elt-text');
+        let allLikes = []
+
+        for (let i = 0; i < phImageLike.length; i++) {
+            let counterLike = phImageLike[i].querySelector('.like-counter');
+            let likesValue = counterLike.getAttribute('data-value');
+            allLikes.push(likesValue);
+        }
+
+        let total = allLikes.reduce((a, b) => a + b);
+        console.log(total);
+        // totalLikes.innerHTML = total + ' ' + `<i class="fas fa-heart" aria-label="likes"></i>`
     }
 }
