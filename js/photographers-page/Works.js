@@ -10,6 +10,7 @@ export default class Works {
         let media = data.media;
         const id = window.location.search.split('id=')[1];
         let mediaFactory = new MediaFactory();
+        let totalLike = 0;
         media.forEach(element => {
             if (id == element.photographerId) {
                 let sectionPhWorks = document.getElementById('ph-works');
@@ -22,11 +23,11 @@ export default class Works {
                 <h2 class="ph-work-title">${element.photoName}</h2>
                 <span class="ph-work-price">${element.price} €</span>
                 <div class='ph-elt-like'>
-                <span id="ph-work-like">
-                    <a class="like-counter" data-value="${element.likes}">${element.likes}</a>
+                <span class="ph-work-like">
+                    <a class="like-counter">${element.likes}</a>
                 </span>
                 <button class="btn-like" type="button">
-                    <i class="fas fa-heart" aria-label='likes' role="button"></i>
+                    <i class="fas fa-heart btn" aria-label='likes' role="button" data-value="${element.likes}"></i>
                 </button>
                 </div>
             </div>
@@ -34,60 +35,51 @@ export default class Works {
                 articlePhWork.innerHTML = workTemplate;
                 sectionPhWorks.appendChild(articlePhWork);
                 articlePhWork.classList.add("ph-work-elt");
+                totalLike += parseInt(element.likes);
             }
         })
-    }
 
-    async boxLikesAndPrice() {
-        await this.photographersWorks();
-        const box = document.getElementById('box');
-        const boxTemplate = `
-        <span id="total-likes">#
-        </span>
-        <span># / jour</span>
-        `
-        box.innerHTML = boxTemplate;
-    }
+        function boxLikesAndPrice(data, id, totalLike) {
+            const photographers = data.photographers;
 
-    async likesUnderWork() {
-        await this.photographersWorks();
-        let phImageLike = document.getElementsByClassName('ph-work-elt-text');
-
-        for (let i = 0; i < phImageLike.length; i++) {
-            let btnLike = document.getElementsByClassName('btn-like');
-            let counterLike = phImageLike[i].querySelector('.like-counter');
-            let likesValue = counterLike.getAttribute('data-value');
-            let isLike = false;
-
-            btnLike[i].addEventListener('click', () => {
-                if (!isLike) {
-                    likesValue++;
-                    counterLike.innerHTML = likesValue;
-                    isLike = true;
-                } else {
-                    likesValue--;
-                    counterLike.innerHTML = likesValue;
-                    isLike = false;
+            photographers.forEach(element => {
+                if (id == element.id) {
+                    let box = document.getElementById('box');
+                    let boxTemplate = `
+                    <span id="total-likes">${totalLike}  <i class="fas fa-heart" aria-label='likes'></i>
+                    </span>
+                    <span>${element.price} €/ jour</span>
+                    `
+                    box.innerHTML = boxTemplate;
                 }
             })
         }
-    }
 
-    async allLikes() {
-        await this.boxLikesAndPrice();
-        this.likesUnderWork();
-        let totalLikes = document.getElementById('total-likes');
-        let phImageLike = document.getElementsByClassName('ph-work-elt-text');
-        let allLikes = []
+        function likes(totalLike) {
+            const div = document.getElementById('ph-works');
+            boxLikesAndPrice(data, id, totalLike);
 
-        for (let i = 0; i < phImageLike.length; i++) {
-            let counterLike = phImageLike[i].querySelector('.like-counter');
-            let likesValue = counterLike.getAttribute('data-value');
-            allLikes.push(likesValue);
+            div.addEventListener('click', function (e) {
+                let buttonsLike = document.querySelectorAll('.btn');
+
+                buttonsLike.forEach(function (btn) {
+                    let totalLikes = document.getElementById('total-likes');
+                    let initElem = e.target;
+                    let likeValue = initElem.dataset.value;
+                    let likesCounter = initElem.parentNode.parentNode.firstElementChild;
+                    let classValue = btn.classList.value.split(' ');
+                    let classTarget = e.target.classList.value.split(' ');
+                    let intersection = classTarget.filter(x => classValue.includes(x));
+
+                    if (intersection) {
+                        likeValue++;
+                        totalLike++;
+                        likesCounter.innerHTML = likeValue;
+                        totalLikes.innerHTML = totalLike + ` <i class="fas fa-heart" aria-label='likes'></i>`;
+                    }
+                })
+            })
         }
-
-        let total = allLikes.reduce((a, b) => a + b);
-        console.log(total);
-        // totalLikes.innerHTML = total + ' ' + `<i class="fas fa-heart" aria-label="likes"></i>`
+        likes(totalLike);
     }
 }

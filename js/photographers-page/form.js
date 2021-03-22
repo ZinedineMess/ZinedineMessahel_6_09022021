@@ -140,10 +140,12 @@ form.addEventListener('submit', function (e) {
         lastName.style.border = 'none';
         email.style.border = 'none';
         message.style.border = 'none';
+        console.group('Contact Message');
         console.log('Prénom : ' + firstName.value);
         console.log('Nom : ' + lastName.value);
         console.log('Email : ' + email.value);
         console.log('Message : ' + message.value);
+        console.groupEnd();
         document.getElementById('contact-form').reset();
     } else {
         forAllFieldsValidation();

@@ -14,11 +14,8 @@ import Form from './photographers-page/form.js';
 // PHOTOGRAPHER PROFIL HEADER
 (new PhotographerProfil()).displayPhotographerProfil();
 
-// PHOTOGRAPHER GALLERY
+// PHOTOGRAPHER GALLERY & LIKES
 (new Works()).photographersWorks();
-
-// PHOTOGRAPHER'S WORK LIKES & BOX (PRICE AND TOTAL LIKES)
-(new Works()).allLikes();
 
 // DROPDOWN MENU
 (new DropDown()).dropDown();
