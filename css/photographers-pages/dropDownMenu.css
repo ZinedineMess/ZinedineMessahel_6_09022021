@@ -53,6 +53,7 @@
         color: #fff;
         border-top: 1px solid #fff;
         border-bottom: 1px solid #fff;
+        z-index: 2;
     }
 
     .arrow-down-open:hover,
@@ -66,5 +67,12 @@
         justify-content: space-between;
         align-items: center;
         border-radius: 5px 5px 0 0;
+    }
+
+    .arrow-up-close {
+        position: absolute;
+        left:8.5rem;
+        top: 1.5rem;
+        color: white;
     }
 }
