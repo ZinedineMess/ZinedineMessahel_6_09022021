@@ -11,6 +11,6 @@ export default function scrollButton() {
     } else {
         button.style.display = "none"
     }
-};
+}
 
 window.addEventListener("scroll", scrollButton);
