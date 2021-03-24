@@ -27,7 +27,8 @@ ul li {
     border-radius: 11px;
     transition: all 0.2s;
     list-style: none;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 ul li:hover {

@@ -13,13 +13,14 @@
 </head>
 
 <body>
-    <header role="banner" id="header-logo">
-        <a href="index.html"><img src="https://res.cloudinary.com/dps3eww2i/image/upload/v1609005020/P6-img/logo.png"
+    <header role="banner" id="header-logo" aria-hidden="false">
+        <a href="index.html" title="HomePage"><img
+                src="https://res.cloudinary.com/dps3eww2i/image/upload/v1609005020/P6-img/logo.png"
                 alt="FishEye Home Page"></a>
     </header>
-    <main>
+    <main aria-hidden="false">
         <!-- HEADER -->
-        <header id="ph-profil">
+        <header id="ph-profil" aria-label="photographer information">
             <section id="ph-profil-header"></section>
         </header>
 
@@ -27,26 +28,26 @@
         <div class="works-sort">
             <span id="sort-text">Trier par</span>
             <div id="sort-wrapper">
-                <button class="sort-btn">Popularité<i class="fas fa-chevron-down arrow-down-open"></i>
-                </button>
-                <ul class="hidden-sort">
-                    <li class="sort">Popularité</li>
-                    <li class="sort">Date</li>
-                    <li class="sort">Tître</li>
+                <button class="sort-btn" aria-haspopup="listbox" aria-labelledby="sort-btn">Popularité</button>
+                <i class="fas fa-chevron-down arrow-down-open"></i>
+                <ul class="hidden-sort" role="listbox">
+                    <li class="sort" role='option'>Popularité</li>
+                    <li class="sort" role='option'>Date</li>
+                    <li class="sort" role='option'>Tître</li>
                     <i class="fas fa-chevron-up arrow-up-close"></i>
                 </ul>
             </div>
         </div>
 
         <!-- WORK -->
-        <section id='ph-works'></section>
+        <section id='ph-works' aria-label='photographer works'></section>
 
         <!-- BOX -->
-        <div id="box"></div>
+        <div id="box" aria-label="photographer likes and price"></div>
 
         <!--MODAL-->
         <div role="dialog" id="form-dialog" aria-label="contact me form" aria-labelledby="form-title"
-            aria-hidden="false">
+            aria-hidden="true">
             <form action="photographer-page.html" method="POST" id="contact-form">
                 <header aria-label="contact form header">
                     <h1 id="form-title">
@@ -83,11 +84,11 @@
         </div>
 
         <!--LIGHTBOX-->
-        <aside id="works-lightbox">
-            <article id="lightbox-body">
-                <i class="fas fa-times close-lightbox-icon"></i>
-                <i class="fas fa-chevron-left left-arrow-lightbox"></i>
-                <i class="fas fa-chevron-right right-arrow-lightbox"></i>
+        <aside id="works-lightbox" aria-hidden="true">
+            <article id="lightbox-body" role='dialog'>
+                <i class="fas fa-times close-lightbox-icon" type="button" title="Close dialog"></i>
+                <i class="fas fa-chevron-left left-arrow-lightbox" type="button" title="Previous image"></i>
+                <i class="fas fa-chevron-right right-arrow-lightbox" type="button" title="Next image"></i>
                 <div id="works-lightbox-media"></div>
                 <div id="works-lightbox-name"></div>
             </article>

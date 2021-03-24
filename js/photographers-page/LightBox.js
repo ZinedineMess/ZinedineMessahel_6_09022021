@@ -13,8 +13,8 @@ export default class Lightbox {
             let src = currentMedia[index];
             let nameSrc = currentMediaName[index];
 
-            lightBox.style.display = 'block';
             currentLightboxIndex = index;
+            lightBox.style.display = 'block';
             lightBoxMedia.innerHTML = `${src}`;
             lightBoxName.innerHTML = `${nameSrc}`;
         }))
@@ -30,6 +30,7 @@ export default class Lightbox {
         previousBtn.addEventListener('click', () => {
             currentLightboxIndex -= 1;
             if (currentLightboxIndex < 0) {
+                currentLightboxIndex = currentMedia.length - 1;
                 currentLightboxIndex = currentMediaName.length - 1;
             }
             let src = currentMedia[currentLightboxIndex];

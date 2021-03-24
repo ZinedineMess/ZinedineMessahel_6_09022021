@@ -13,8 +13,8 @@ export default class PhotographersHome {
             const articlePhotographers = document.createElement('article');
             articlePhotographers.className = 'article';
             const templatePhotographer = `
-            <article class="${photographe.tags.join(' ')}">
-            <a href="photographers.html?id=${photographe.id}">
+            <article class="${photographe.tags.join(' ')}" aria-label='photographers'>
+            <a href="photographers.html?id=${photographe.id}" title="${photographe.name}">
                 <img src="${photographe.portrait}" alt="photo de ${photographe.name}">
                 <h1 class="name">${photographe.name}</h1>
             </a>

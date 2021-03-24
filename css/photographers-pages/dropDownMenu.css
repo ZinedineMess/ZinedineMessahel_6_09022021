@@ -7,7 +7,7 @@
     .works-sort {
         display: block;
         margin-left: 2rem;
-        margin-top : 2rem;
+        margin-top: 2rem;
     }
 
     #sort-text {
@@ -29,12 +29,11 @@
         font-weight: 500;
         font-size: 1rem;
         display: flex;
-        justify-content: space-between;
+        justify-content: start;
         align-items: center;
     }
 
     ul.hidden-sort {
-        background: #901c1c;
         position: absolute;
         z-index: 10;
         top: 385px;
@@ -47,16 +46,13 @@
     }
 
     .hidden-sort li {
+        background: #901c1c;
         padding: 1.25rem;
         font-size: 1.2rem;
         font-weight: 500;
         color: #fff;
-        border-top: 1px solid #fff;
-        border-bottom: 1px solid #fff;
-        z-index: 2;
     }
 
-    .arrow-down-open:hover,
     ul.hidden-sort li:hover {
         background-color: #651414;
         cursor: pointer;
@@ -66,13 +62,19 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-radius: 5px 5px 0 0;
+    }
+
+    .arrow-down-open {
+        position: absolute;
+        left: 18.5rem;
+        top: 26.15rem;
+        color: #fff;
     }
 
     .arrow-up-close {
         position: absolute;
-        left:8.5rem;
+        left: 8.5rem;
         top: 1.5rem;
-        color: white;
+        color: #fff;
     }
 }

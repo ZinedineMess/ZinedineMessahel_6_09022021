@@ -20,7 +20,7 @@ export default class PhotographerProfil {
                     <p class="ph-tagline">${element.tagline}</p>
                     <p >${element.tags.map(tag => `<a class="ph-tags" href="index.html">#${tag}</a>`).join(" ")}</p>
                 </div>
-                <button id="ph-contact">Contactez-moi</button>
+                <button id="ph-contact" title='Contact Me'>Contactez-moi</button>
                 <img src="${element.portrait}" alt="photo de ${element.name}">
             </article>
             `

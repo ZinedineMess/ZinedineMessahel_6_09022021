@@ -13,7 +13,7 @@
     transform: translateX(-50%);
 }
 
-#contact-form {
+form {
     display: flex;
     flex-direction: column;
     background: #db8876;
@@ -21,50 +21,50 @@
     padding: 1.5rem 2.2rem 2.2rem 2.2rem;
 }
 
-#contact-form header {
+form header {
     display: flex;
     justify-content: space-between;
     margin: -0.3rem 0.3rem 1.25rem 0;
 }
 
-#contact-form button {
+form button {
     background: none;
     border: none;
 }
 
-#contact-form h1 {
+form h1 {
     font-weight: 400;
     font-size: 2.2em;
 }
 
-#contact-form #ph-form-name {
+form #ph-form-name {
     display: block;
 }
 
-#contact-form .close-form-icon {
+form .close-form-icon {
     font-size: 2em;
     color: #fff;
     margin-top: 0.6rem;
 }
 
-#contact-form .close-form-icon:hover {
+form .close-form-icon:hover {
     cursor: pointer;
 }
 
-#contact-form label {
+form label {
     font-size: 1.2em;
     margin: 0.3rem 0 0.2rem 0;
 }
 
-#contact-form input,
-#contact-form textarea {
+form input,
+form textarea {
     border: none;
     padding: 0.3rem;
     font-size: 1.2em;
     border-radius: 0.3rem;
 }
 
-#contact-form .form-submit {
+form .form-submit {
     margin-top: 1.6rem;
     background: #901c1c;
     color: #fff;
@@ -74,7 +74,7 @@
     align-self: center;
 }
 
-#contact-form .form-submit:hover {
+form .form-submit:hover {
     cursor: pointer;
 }
 
@@ -114,25 +114,25 @@ input[data-error]::after {
         width: 95%;
     }
 
-    #contact-form h1 {
+    form h1 {
         font-size: 2.6em;
     }
 
-    #contact-form .close-form-icon {
+    form .close-form-icon {
         font-size: 2.4em;
     }
 
-    #contact-form label {
+    form label {
         font-size: 1.6em;
     }
 
-    #contact-form input,
-    #contact-form textarea {
+    form input,
+    form textarea {
         font-size: 1.6em;
     }
 
-    #contact-form .form-submit {
+    form .form-submit {
         height: 4.4rem;
-        align-self: start;
+        align-self: flex-start;
     }
 }

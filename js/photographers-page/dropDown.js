@@ -32,23 +32,27 @@ export default class DropDown {
         let currentMedia = [];
         let currentMediaName = [];
         let totalLike = [];
+        let btnSort = document.querySelector('.sort-btn');
         const sortBtn = Array.from(document.getElementsByClassName('sort'));
 
         sortBtn.forEach((btn, index) => btn.addEventListener('click', () => {
 
             if (index == 0) {
+                btnSort.innerHTML = `Popularité`;
                 // SORT BY POPULARITY  
                 mediaArraySort = media.sort((a, b) => {
                     return b.likes - a.likes
                 })
 
             } else if (index == 1) {
+                btnSort.innerHTML = `Date`;
                 // SORT BY DATE 
                 mediaArraySort = media.sort((a, b) => {
                     return new Date(a.date).valueOf() - new Date(b.date).valueOf();
                 })
 
             } else if (index == 2) {
+                btnSort.innerHTML = `Titre`;
                 // SORT BY TITLE
                 mediaArraySort = media.sort((a, b) => {
                     if (a.photoName.toLowerCase() < b.photoName.toLowerCase()) {

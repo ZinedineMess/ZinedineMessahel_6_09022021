@@ -26,8 +26,7 @@
     color: #901C1C;
     font-size: 1.7rem;
     top: 0.5rem;
-    right: 1rem;
-    cursor: pointer;
+    right: -3rem;
 }
 
 .left-arrow-lightbox {
@@ -35,8 +34,7 @@
     color: #901C1C;
     font-size: 2rem;
     top: 48%;
-    left: 1rem;
-    cursor: pointer;
+    left: -3rem;
 }
 
 .right-arrow-lightbox {
@@ -44,18 +42,14 @@
     color: #901C1C;
     font-size: 2rem;
     top: 48%;
-    right: 1rem;
-    cursor: pointer;
+    right: -3rem;
 }
 
 #works-lightbox-name {
-    position: absolute;
     color: #901C1C;
     font-family: sans-serif;
     font-weight: 600;
     font-size: 1rem;
-    padding: 0.5rem 0rem;
-    left: 10%;
 }
 
 #works-lightbox-media {
@@ -77,4 +71,29 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+@media (min-width: 600px) {
+    .close-lightbox-icon {
+        top: 0.5rem;
+        right: 1rem;
+        cursor: pointer;
+    }
+
+    .left-arrow-lightbox {
+        top: 48%;
+        left: 0rem;
+        cursor: pointer;
+    }
+
+    .right-arrow-lightbox {
+        top: 48%;
+        right: 0rem;
+        cursor: pointer;
+    }
+
+    #works-lightbox-name {
+        padding: 0.5rem 0rem;
+        left: 23%;
+    }
 }
