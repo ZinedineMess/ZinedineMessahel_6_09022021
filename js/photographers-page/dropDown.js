@@ -6,21 +6,6 @@ import MediaFactory from '../Factory/MediaFactory.js';
 import Lightbox from './LightBox.js';
 
 export default class DropDown {
-
-    // OPEN DROPDOWN MENU
-    openDropDown() {
-        let hiddenSort = document.getElementsByClassName('hidden-sort');
-
-        hiddenSort[0].style.display = 'block';
-    }
-
-    // CLOSE DROPDOWN MENU
-    closeDropDown() {
-        let hiddenSort = document.getElementsByClassName('hidden-sort');
-
-        hiddenSort[0].style.display = "none";
-    }
-
     // SORT MEDIAS
     async sortMedias() {
         let mediaArraySort = [];
@@ -31,21 +16,24 @@ export default class DropDown {
         let currentLightboxIndex = 0;
         let currentMedia = [];
         let currentMediaName = [];
-        let totalLike = [];
         let btnSort = document.querySelector('.sort-btn');
+        let hiddenSort = document.getElementsByClassName('hidden-sort');
         const sortBtn = Array.from(document.getElementsByClassName('sort'));
 
         sortBtn.forEach((btn, index) => btn.addEventListener('click', () => {
 
             if (index == 0) {
                 btnSort.innerHTML = `Popularité`;
+                hiddenSort[0].style.display = "none";
                 // SORT BY POPULARITY  
                 mediaArraySort = media.sort((a, b) => {
                     return b.likes - a.likes
                 })
 
+
             } else if (index == 1) {
                 btnSort.innerHTML = `Date`;
+                hiddenSort[0].style.display = "none";
                 // SORT BY DATE 
                 mediaArraySort = media.sort((a, b) => {
                     return new Date(a.date).valueOf() - new Date(b.date).valueOf();
@@ -53,6 +41,7 @@ export default class DropDown {
 
             } else if (index == 2) {
                 btnSort.innerHTML = `Titre`;
+                hiddenSort[0].style.display = "none";
                 // SORT BY TITLE
                 mediaArraySort = media.sort((a, b) => {
                     if (a.photoName.toLowerCase() < b.photoName.toLowerCase()) {
@@ -65,6 +54,7 @@ export default class DropDown {
 
             // DISPLAY PHOTOGRAPHERS WORKS WITH SORT
             document.getElementById("ph-works").innerHTML = "";
+            let totalLike = [];
             mediaArraySort.forEach(element => {
                 if (id == element.photographerId) {
                     let sectionPhWorks = document.getElementById('ph-works');
@@ -105,13 +95,18 @@ export default class DropDown {
     dropDown() {
         const arrowOpen = document.getElementsByClassName('arrow-down-open');
         const arrowClose = document.getElementsByClassName('arrow-up-close');
+        let hiddenSort = document.getElementsByClassName('hidden-sort');
 
         if (arrowOpen) {
-            arrowOpen[0].addEventListener('click', this.openDropDown);
+            arrowOpen[0].addEventListener('click', () => {
+                hiddenSort[0].style.display = 'block';
+            });
             this.sortMedias();
         }
         if (arrowClose) {
-            arrowClose[0].addEventListener('click', this.closeDropDown);
+            arrowClose[0].addEventListener('click', () => {
+                hiddenSort[0].style.display = "none";
+            });
         }
     }
 }
