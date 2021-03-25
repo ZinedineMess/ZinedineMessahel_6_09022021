@@ -9,7 +9,7 @@ import {} from './home/filter.js';
 import PhotographerProfil from './photographers-page/PhotographerProfil.js';
 import DropDown from './photographers-page/DropDown.js';
 import Works from './photographers-page/Works.js';
-import Likes from './photographers-page/likes.js';
+import Likes from './photographers-page/Likes.js';
 import Form from './photographers-page/form.js';
 
 // PHOTOGRAPHER PROFIL HEADER

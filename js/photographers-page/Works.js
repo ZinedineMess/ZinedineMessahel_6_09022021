@@ -48,4 +48,22 @@ export default class Works {
             }
         })
     }
+
+    async boxLikesAndPrice(totalLike) {
+        let data = await (new ApiFishEye()).getDataFishEye();
+        const photographers = data.photographers;
+        const id = window.location.search.split('id=')[1];
+
+        photographers.forEach(element => {
+            if (id == element.id) {
+                let box = document.getElementById('box');
+                let boxTemplate = `
+                <span id="total-likes">${totalLike}  <i class="fas fa-heart" aria-label='likes'></i>
+                </span>
+                <span>${element.price} €/ jour</span>
+                `
+                box.innerHTML = boxTemplate;
+            }
+        })
+    }
 }
