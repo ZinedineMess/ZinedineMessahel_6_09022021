@@ -1,6 +1,5 @@
 'use strict';
 /////////////////////////////////////////
-
 // HOME
 import {} from './home/scrollButton.js';
 import {} from './home/filter.js';
@@ -15,10 +14,10 @@ import Form from './photographers-page/form.js';
 // PHOTOGRAPHER PROFIL HEADER
 (new PhotographerProfil()).displayPhotographerProfil();
 
-// PHOTOGRAPHER GALLERY & LIKES
-(new Works()).photographersWorks();
+// PHOTOGRAPHER GALLERY & LIKES BOX
+(new Works()).photographersMedias();
 
-// LIKES & BOX
+// LIKES
 (new Likes()).likes();
 
 // DROPDOWN MENU

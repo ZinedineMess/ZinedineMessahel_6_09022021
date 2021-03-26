@@ -1,40 +1,29 @@
 'use strict';
 /////////////////////////////////////////
 
-import Works from './Works.js';
-
 export default class Likes {
+    likes() {
+        const media = document.getElementById('ph-works');
 
-    likes(totalLike) {
-        const div = document.getElementById('ph-works');
-        (new Works()).boxLikesAndPrice(totalLike);
-        let isLike = false;
+        media.addEventListener('click', (e) => {
+            let classListTarget = typeof e.target.classList === 'undefined' ? [] : e.target.classList.value.split(' ');
+            let hasClassBtn = -1 != classListTarget.indexOf('heart-btn');
 
-        div.addEventListener('click', (e) => {
-            let buttonsLike = document.querySelectorAll('.heart-btn');
+            if (hasClassBtn) {
+                let totalLikes = parseInt(document.getElementById('total-likes').innerHTML);
+                let counterLike = e.target.parentNode.parentNode.firstElementChild.firstElementChild;
+                let likeValue = parseInt(counterLike.innerHTML);
+                let isLiked = -1 != classListTarget.indexOf('isLiked');
+                
+                document.getElementById('total-likes').innerHTML = isLiked ? --totalLikes : ++totalLikes;
+                counterLike.innerHTML = isLiked ? --likeValue : ++likeValue;
 
-            buttonsLike.forEach((btn) => {
-                let initElem = e.target;
-                let likesCounter = initElem.parentNode.parentNode.firstElementChild;
-                let likeValue = initElem.dataset.value;
-
-                if (initElem === btn) {
-                    if (!isLike) {
-                        likeValue++;
-                        // totalLike++;
-                        likesCounter.innerHTML = likeValue;
-                        // totalLikes.innerHTML = totalLike + ` <i class="fas fa-heart" aria-label='likes'></i>`;
-                        isLike = true;
-                    } else {
-                        likeValue--;
-                        // totalLike++;
-                        likesCounter.innerHTML = likeValue;
-                        // totalLikes.innerHTML = totalLike + ` <i class="fas fa-heart" aria-label='likes'></i>`;
-                        isLike = false;
-                    }
-
+                if (isLiked) {
+                    e.target.classList.remove('isLiked');
+                } else {
+                    e.target.classList.add('isLiked');
                 }
-            })
+            }
         })
     }
 }

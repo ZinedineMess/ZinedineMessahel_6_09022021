@@ -6,7 +6,7 @@ import MediaFactory from '../Factory/MediaFactory.js';
 import Lightbox from './LightBox.js';
 
 export default class Works {
-    async photographersWorks() {
+    async photographersMedias() {
         let data = await (new ApiFishEye()).getDataFishEye();
         let media = data.media;
         const id = window.location.search.split('id=')[1];
@@ -47,23 +47,23 @@ export default class Works {
                 (new Lightbox()).lightboxKeyboard(currentMedia, currentMediaName, currentLightboxIndex);
             }
         })
+        this.boxLikesAndPrice(totalLike, data.photographers);
     }
 
-    async boxLikesAndPrice(totalLike) {
-        let data = await (new ApiFishEye()).getDataFishEye();
-        const photographers = data.photographers;
+    boxLikesAndPrice(totalLike, photographers) {
         const id = window.location.search.split('id=')[1];
 
         photographers.forEach(element => {
             if (id == element.id) {
                 let box = document.getElementById('box');
                 let boxTemplate = `
-                <span id="total-likes">${totalLike}  <i class="fas fa-heart" aria-label='likes'></i>
-                </span>
+                <span id="total-likes">${totalLike}</span>
+                <i class="fas fa-heart" aria-label='likes'></i>
                 <span>${element.price} €/ jour</span>
                 `
                 box.innerHTML = boxTemplate;
             }
         })
     }
+    
 }
