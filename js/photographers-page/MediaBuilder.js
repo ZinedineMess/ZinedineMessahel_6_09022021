@@ -5,7 +5,7 @@ import ApiFishEye from '../Data/ApiFishEye.js';
 import MediaFactory from '../Factory/MediaFactory.js';
 import Lightbox from './LightBox.js';
 
-export default class Works {
+export default class MediaBuilder {
     async photographersMedias() {
         let data = await (new ApiFishEye()).getDataFishEye();
         let media = data.media;
@@ -30,8 +30,7 @@ export default class Works {
                     <span class="ph-work-like">
                         <a class="like-counter">${element.likes}</a>
                     </span>
-                    <button class="btn-like" type="button"><i class="fas fa-heart heart-btn" aria-label='likes' role="button" data-value="${element.likes}"></i>
-                    </button>
+                    <i class="fas fa-heart heart-btn" aria-label='likes' role="button" data-value="${element.likes}"></i>
                     </div>
                 </div>
                 `
@@ -65,5 +64,4 @@ export default class Works {
             }
         })
     }
-    
 }

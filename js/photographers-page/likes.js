@@ -11,7 +11,7 @@ export default class Likes {
 
             if (hasClassBtn) {
                 let totalLikes = parseInt(document.getElementById('total-likes').innerHTML);
-                let counterLike = e.target.parentNode.parentNode.firstElementChild.firstElementChild;
+                let counterLike = e.target.parentNode.firstElementChild.firstElementChild;
                 let likeValue = parseInt(counterLike.innerHTML);
                 let isLiked = -1 != classListTarget.indexOf('isLiked');
                 

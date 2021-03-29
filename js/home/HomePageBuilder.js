@@ -2,9 +2,11 @@
 /////////////////////////////////////////
 
 import ApiFishEye from '../Data/ApiFishEye.js';
+import Filter from './Filter.js';
+import Scroll from './Scroll.js';
 
 // DISPLAY ALL PHOTOGRAPHERS BY DEFAULT
-export default class PhotographersHome {
+export default class HomePageBuilder {
     async displayPhotographers() {
         let data = await (new ApiFishEye()).getDataFishEye();
         let photographers = data.photographers;
@@ -29,5 +31,7 @@ export default class PhotographersHome {
             sectionPhotographers.appendChild(articlePhotographers);
             articlePhotographers.innerHTML = templatePhotographer;
         })
+        new Filter().filter();
+        new Scroll().scrollButtonEvent();
     }
 }

@@ -1,27 +1,42 @@
 'use strict';
 /////////////////////////////////////////
+
 // HOME
-import {} from './home/scrollButton.js';
-import {} from './home/filter.js';
+import HomePageBuilder from './home/HomePageBuilder.js';
 
 // PHOTOGRAPHERS PAGES
 import PhotographerProfil from './photographers-page/PhotographerProfil.js';
 import DropDown from './photographers-page/DropDown.js';
-import Works from './photographers-page/Works.js';
+import MediaBuilder from './photographers-page/MediaBuilder.js';
 import Likes from './photographers-page/Likes.js';
-import Form from './photographers-page/form.js';
+import {
+    Form,
+    FormFields
+} from './photographers-page/form.js';
 
-// PHOTOGRAPHER PROFIL HEADER
-(new PhotographerProfil()).displayPhotographerProfil();
+class PagesBuilder {
+    render() {
+        if (window.location.pathname == '/index.html' || window.location.pathname == '/index.html#') {
+            // HOMEPAGE (PHOTOGRAPHERS, SCROLL, FILTER)
+            new HomePageBuilder().displayPhotographers();
+        } else if (window.location.pathname == '/photographers.html') {
+            // PHOTOGRAPHER PROFIL HEADER
+            new PhotographerProfil().displayPhotographerProfil();
 
-// PHOTOGRAPHER GALLERY & LIKES BOX
-(new Works()).photographersMedias();
+            //PHOTOGRAPHER GALLERY & LIKES BOX
+            new MediaBuilder().photographersMedias();
 
-// LIKES
-(new Likes()).likes();
+            // LIKES
+            new Likes().likes();
 
-// DROPDOWN MENU
-(new DropDown()).dropDown();
+            // DROPDOWN MENU
+            new DropDown().dropDown();
 
-// CONTACT FORM
-(new Form()).modal();
+            // CONTACT FORM & FORM FIELDS
+            new Form().modal();
+            new FormFields().fields();
+        }
+    }
+}
+
+new PagesBuilder().render();
