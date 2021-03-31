@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header role="banner" id="header-logo" aria-hidden="false">
+    <header role="banner" aria-hidden="false">
         <a href="index.html" title="HomePage"><img
                 src="https://res.cloudinary.com/dps3eww2i/image/upload/v1609005020/P6-img/logo.png"
                 alt="FishEye Home Page"></a>
@@ -61,22 +61,24 @@
                 <!-- FIRST NAME -->
                 <div class="formData" data-error="Vous devez entrer votre prénom." data-error-visible="false">
                     <label for="first-name" id="label-firstname">Prénom</label>
-                    <input name="first-name" id="first-name" aria-labelledby="label-firstname">
+                    <input name="first-name" id="first-name" aria-labelledby="label-firstname" placeholder="Prénom">
                 </div>
                 <!-- LAST NAME -->
                 <div class="formData" data-error="Vous devez entrer votre nom." data-error-visible="false">
                     <label for="last-name" id="label-lastname">Nom</label>
-                    <input name="last-name" id="last-name" aria-labelledby="label-lastname">
+                    <input name="last-name" id="last-name" aria-labelledby="label-lastname" placeholder="Nom">
                 </div>
                 <!-- EMAIL -->
                 <div class="formData" data-error="Vous devez entrer un email valide." data-error-visible="false">
                     <label for="email" id="label-email">Email</label>
-                    <input type="email" name="email" id="email" aria-labelledby="label-email">
+                    <input type="email" name="email" id="email" aria-labelledby="label-email"
+                        placeholder="exemple@email.com">
                 </div>
                 <!-- MESSAGE -->
                 <div class="formData" data-error="Vous devez entrer votre message." data-error-visible="false">
                     <label for="message" id="label-message">Votre message</label>
-                    <textarea name="message" id="message" cols="20" rows="5" aria-labelledby="label-message"></textarea>
+                    <textarea name="message" id="message" cols="20" rows="5" aria-labelledby="label-message"
+                        placeholder="Votre message..."></textarea>
                 </div>
                 <!-- SUBMIT -->
                 <input type="submit" value="Envoyer" class="form-submit" title="Send">

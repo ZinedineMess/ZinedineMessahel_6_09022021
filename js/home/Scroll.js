@@ -3,7 +3,7 @@
 
 export default class Scroll {
     scrollButton() {
-        const button = document.getElementById("main-photographers_link");
+        const button = document.getElementById("main-photographers-link");
         const y = window.scrollY;
 
         if (y >= 130) {

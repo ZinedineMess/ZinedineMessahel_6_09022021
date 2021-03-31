@@ -4,53 +4,67 @@
 }
 
 @media (min-width: 900px) {
+    .arrow-down-open {
+        color: #fff;
+        left: 18.5rem;
+        position: absolute;
+        top: 26.15rem;
+    }
+
+    .arrow-up-close {
+        color: #fff;
+        left: 8.5rem;
+        position: absolute;
+        top: 1.5rem;
+    }
+
+    .hidden-sort li {
+        background: #901c1c;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 1.25rem;
+    }
+
+    .sort-btn {
+        align-items: center;
+        background: #901c1c;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        display: flex;
+        font-size: 1rem;
+        font-weight: 500;
+        justify-content: flex-start;
+        left: 11rem;
+        padding: .625rem 1.25rem;
+        position: absolute;
+        top: 25.2rem;
+        width: 10rem;
+    }
+
     .works-sort {
         display: block;
         margin-left: 2rem;
         margin-top: 2rem;
     }
 
-    #sort-text {
-        font-weight: 700;
+    .works-sort>span {
         font-size: 1.2rem;
+        font-weight: 700;
         margin-right: 1.5625rem;
     }
 
-    .sort-btn {
-        background: #901c1c;
-        color: #fff;
-        position: absolute;
-        top: 25.2rem;
-        left: 11rem;
-        width: 10rem;
-        border: none;
-        padding: 0.625rem 1.25rem;
-        border-radius: 5px;
-        font-weight: 500;
-        font-size: 1rem;
-        display: flex;
-        justify-content: start;
-        align-items: center;
-    }
-
     ul.hidden-sort {
-        position: absolute;
-        z-index: 10;
-        top: 385px;
-        left: 167px;
-        width: 11rem;
         border-radius: 5px;
         color: #fff;
-        padding: 0;
         display: none;
-    }
-
-    .hidden-sort li {
-        background: #901c1c;
-        padding: 1.25rem;
-        font-size: 1.2rem;
-        font-weight: 500;
-        color: #fff;
+        left: 167px;
+        padding: 0;
+        position: absolute;
+        top: 385px;
+        width: 11rem;
+        z-index: 10;
     }
 
     ul.hidden-sort li:hover {
@@ -59,22 +73,8 @@
     }
 
     ul.hidden-sort li:nth-child(1) {
+        align-items: center;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-    }
-
-    .arrow-down-open {
-        position: absolute;
-        left: 18.5rem;
-        top: 26.15rem;
-        color: #fff;
-    }
-
-    .arrow-up-close {
-        position: absolute;
-        left: 8.5rem;
-        top: 1.5rem;
-        color: #fff;
     }
 }

@@ -21,29 +21,27 @@ export default class DropDown {
         const sortBtn = Array.from(document.getElementsByClassName('sort'));
 
         sortBtn.forEach((btn, index) => btn.addEventListener('click', () => {
+            hiddenSort[0].style.display = "none";
 
             if (index == 0) {
                 btnSort.innerHTML = `Popularité`;
-                hiddenSort[0].style.display = "none";
-                // SORT BY POPULARITY  
-                mediaArraySort = media.sort((a, b) => {
+
+                mediaArraySort = media.sort((a, b) => { // SORT BY POPULARITY  
                     return b.likes - a.likes
                 })
 
 
             } else if (index == 1) {
                 btnSort.innerHTML = `Date`;
-                hiddenSort[0].style.display = "none";
-                // SORT BY DATE 
-                mediaArraySort = media.sort((a, b) => {
+
+                mediaArraySort = media.sort((a, b) => { // SORT BY DATE 
                     return new Date(a.date).valueOf() - new Date(b.date).valueOf();
                 })
 
             } else if (index == 2) {
-                btnSort.innerHTML = `Titre`;
-                hiddenSort[0].style.display = "none";
-                // SORT BY TITLE
-                mediaArraySort = media.sort((a, b) => {
+                btnSort.innerHTML = `Titre`; 
+
+                mediaArraySort = media.sort((a, b) => { // SORT BY TITLE
                     if (a.photoName.toLowerCase() < b.photoName.toLowerCase()) {
                         return -1;
                     } else if (a.photoName.toLowerCase() > b.photoName.toLowerCase()) {

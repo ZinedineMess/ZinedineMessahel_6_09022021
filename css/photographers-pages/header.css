@@ -1,16 +1,16 @@
 /* HEADER */
-#header-logo {
+header {
     align-items: center;
+    margin-bottom: 2rem;
     margin-top: 2rem;
-    margin-bottom : 2rem;
 }
 
-#header-logo img {
+header img {
     width: 12.5rem;
 }
 
 @media (min-width: 900px) {
-    #header-logo {
+    header {
         margin-left: 2rem;
     }
-}    
+}

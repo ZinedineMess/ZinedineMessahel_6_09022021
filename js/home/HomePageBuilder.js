@@ -18,7 +18,7 @@ export default class HomePageBuilder {
             <article class="${photographe.tags.join(' ')}" aria-label='photographers'>
             <a href="photographers.html?id=${photographe.id}" title="${photographe.name}">
                 <img src="${photographe.portrait}" alt="photo de ${photographe.name}">
-                <h1 class="name">${photographe.name}</h1>
+                <h2 class="name">${photographe.name}</h2>
             </a>
             <p class="location">${photographe.city}, ${photographe.country}</p>
             <p class="tagline">${photographe.tagline}</p>

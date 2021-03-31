@@ -1,26 +1,26 @@
 /* BUTTON 'Passer au contenu' */
-#main-photographers_link {
-    display: none;
+main>a {
     background: #DB8876;
+    border-radius: .3125rem;
     color: #000;
+    display: none;
+    flex-wrap: nowrap;
     font-family: 'DM Sans', sans-serif;
-    text-align: center;
-    position: fixed;
-    text-decoration: none;
-    border-radius: 0.3125rem;
-    top: 2%;
-    right: 0;
+    font-size: 18px;
+    font-weight: 700;
     left: 0;
     margin: 0 auto;
-    width: 182px;
     padding: 5px;
-    font-weight: 700;
-    font-size: 18px;
-    flex-wrap: nowrap;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    top: 2%;
+    width: 182px;
     z-index: 1;
 }
 
-#main-photographers_link:hover {
+main>a:hover {
     background: #901C1C;
     color: #fff;
 }
