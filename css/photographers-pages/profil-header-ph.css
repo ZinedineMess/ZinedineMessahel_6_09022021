@@ -31,8 +31,12 @@
     left: 50%;
     position: fixed;
     right: 50%;
-    transform: translateX(-50%);
     width: 170px;
+}
+
+.ph-profil button:hover {
+    background: #651414;
+    transform: scale(1.05);
 }
 
 .ph-profil img {
@@ -53,10 +57,10 @@
     border-radius: .6875rem;
     color: #901C1C;
     font-size: 12px;
-    margin: 0;
-    padding: .0625rem .375rem;
     text-decoration: none;
     transition: all .2s;
+    margin: 0;
+    padding: .0625rem .375rem;
 }
 
 .ph-tags:hover {

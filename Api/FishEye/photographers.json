@@ -29,7 +29,7 @@
             "tags": ["art", "fashion", "events"],
             "tagline": "Photographe freelance",
             "price": 500,
-            "portrait": "../medias/portrait/TracyGalindo.jpg", 
+            "portrait": "../medias/portrait/TracyGalindo.jpg",
             "alt": "Tracy Galindo portrait"
 
         },
@@ -606,7 +606,7 @@
         {
             "id": 952343423,
             "photographerId": 930,
-            "video": "../medias/Ellie Rose/Sport_Tricks_in_the_air.mp4",
+            "video": "../medias/Ellie-Rose/Sport_Tricks_in_the_air.mp4",
             "alt": "Sport Tricks in the air",
             "tags": ["sport"],
             "likes": 150,
@@ -617,7 +617,7 @@
         {
             "id": 235234343,
             "photographerId": 930,
-            "image": "../medias/Ellie Rose/Sport_Next_Hold.jpg",
+            "image": "../medias/Ellie-Rose/Sport_Next_Hold.jpg",
             "alt": "Sport Next Hold",
             "tags": ["sport"],
             "likes": 101,
@@ -628,7 +628,7 @@
         {
             "id": 235343222,
             "photographerId": 930,
-            "image": "../medias/Ellie Rose/sport_water_tunnel.jpg",
+            "image": "../medias/Ellie-Rose/sport_water_tunnel.jpg",
             "alt": "sport water tunnel",
             "tags": ["sport"],
             "likes": 103,
@@ -639,7 +639,7 @@
         {
             "id": 7775342343,
             "photographerId": 930,
-            "image": "../medias/Ellie Rose/Sport_Sky_Cross.jpg",
+            "image": "../medias/Ellie-Rose/Sport_Sky_Cross.jpg",
             "alt": "Sport Sky Cross",
             "tags": ["sport"],
             "likes": 77,
@@ -650,7 +650,7 @@
         {
             "id": 9253445784,
             "photographerId": 930,
-            "image": "../medias/Ellie Rose/Sport_Race_End.jpg",
+            "image": "../medias/Ellie-Rose/Sport_Race_End.jpg",
             "alt": "Sport Race End",
             "tags": ["sport"],
             "likes": 88,
@@ -661,7 +661,7 @@
         {
             "id": 22299394,
             "photographerId": 930,
-            "image": "../medias/Ellie Rose/Sport_Jump.jpg",
+            "image": "../medias/Ellie-Rose/Sport_Jump.jpg",
             "alt": "Sport Jump",
             "tags": ["sport"],
             "likes": 95,
@@ -672,7 +672,7 @@
         {
             "id": 3452342633,
             "photographerId": 930,
-            "image": "../medias/Ellie Rose/Architecture_White_Light.jpg",
+            "image": "../medias/Ellie-Rose/Architecture_White_Light.jpg",
             "alt": "Architecture White Light",
             "tags": ["architecture"],
             "likes": 52,
@@ -683,7 +683,7 @@
         {
             "id": 939234243,
             "photographerId": 930,
-            "image": "../medias/Ellie Rose/Architecture_Water_on_Modern.jpg",
+            "image": "../medias/Ellie-Rose/Architecture_Water_on_Modern.jpg",
             "alt": "Architecture Water on Modern",
             "tags": ["architecture"],
             "likes": 55,
@@ -694,7 +694,7 @@
         {
             "id": 222959233,
             "photographerId": 930,
-            "image": "../medias/Ellie Rose/Architecture_Horseshoe.jpg",
+            "image": "../medias/Ellie-Rose/Architecture_Horseshoe.jpg",
             "alt": "Architecture Horseshoe",
             "tags": ["architecture"],
             "likes": 85,
@@ -705,7 +705,7 @@
         {
             "id": 965933434,
             "photographerId": 930,
-            "image": "../medias/Ellie Rose/Architecture_Cross_Bar.jpg",
+            "image": "../medias/Ellie-Rose/Architecture_Cross_Bar.jpg",
             "alt": "Architecture Cross Bar",
             "tags": ["architecture"],
             "likes": 66,
@@ -716,7 +716,7 @@
         {
             "id": 777723343,
             "photographerId": 930,
-            "image": "../medias/Ellie Rose/Architecture_Connected_Curves.jpg",
+            "image": "../medias/Ellie-Rose/Architecture_Connected_Curves.jpg",
             "alt": "Architecture Connected Curves",
             "tags": ["architecture"],
             "likes": 79,

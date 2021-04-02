@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -31,10 +32,10 @@
                 <button class="sort-btn" aria-haspopup="listbox">Popularité</button>
                 <i class="fas fa-chevron-down arrow-down-open"></i>
                 <ul class="hidden-sort" role="listbox">
-                    <li class="sort" role='option'>Popularité</li>
+                    <li class="sort" role='option'>Popularité <i class="fas fa-chevron-up arrow-up-close"></i>
+                    </li>
                     <li class="sort" role='option'>Date</li>
                     <li class="sort" role='option'>Tître</li>
-                    <i class="fas fa-chevron-up arrow-up-close"></i>
                 </ul>
             </div>
         </div>
@@ -88,9 +89,9 @@
         <!--LIGHTBOX-->
         <aside id="works-lightbox" aria-hidden="true">
             <article id="lightbox-body" role='dialog'>
-                <i class="fas fa-times close-lightbox-icon" type="button" title="Close dialog"></i>
-                <i class="fas fa-chevron-left left-arrow-lightbox" type="button" title="Previous image"></i>
-                <i class="fas fa-chevron-right right-arrow-lightbox" type="button" title="Next image"></i>
+                <i class="fas fa-times close-lightbox-icon" role="button" title="Close dialog"></i>
+                <i class="fas fa-chevron-left left-arrow-lightbox" role="button" title="Previous image"></i>
+                <i class="fas fa-chevron-right right-arrow-lightbox" role="button" title="Next image"></i>
                 <div id="works-lightbox-media"></div>
                 <div id="works-lightbox-name"></div>
             </article>

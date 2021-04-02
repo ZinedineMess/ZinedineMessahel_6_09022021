@@ -8,7 +8,7 @@
         color: #fff;
         left: 18.5rem;
         position: absolute;
-        top: 25.95rem;
+        top: 26.4rem;
     }
 
     .arrow-up-close {
@@ -37,10 +37,10 @@
         font-weight: 500;
         justify-content: flex-start;
         left: 11rem;
-        padding: .625rem 1.25rem;
         position: absolute;
-        top: 25.2rem;
+        top: 25.6rem;
         width: 10rem;
+        padding: .625rem 1.25rem;
     }
 
     .works-sort {
@@ -60,11 +60,11 @@
         color: #fff;
         display: none;
         left: 167px;
-        padding: 0;
         position: absolute;
         top: 385px;
         width: 11rem;
         z-index: 10;
+        padding: 0;
     }
 
     ul.hidden-sort li:hover {

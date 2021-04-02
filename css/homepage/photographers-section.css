@@ -1,12 +1,12 @@
 /* PHOTOGRAPHERS SECTION */
-.article article {
-    margin: .5rem;
-    padding: .3rem;
+.articlePh {
     text-align: center;
     width: 22rem;
+    margin: .5rem;
+    padding: .3rem;
 }
 
-.article article a {
+.articlePh a {
     text-decoration: none;
 }
 
@@ -40,11 +40,11 @@
 section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 5rem;
     margin-top: 7rem;
-    padding: 0;
     width: 100%;
+    padding: 0;
 }
 
 section img {
@@ -52,10 +52,10 @@ section img {
     border-radius: 50%;
     box-shadow: 0 0 .8rem rgba(134, 134, 134, 0.432);
     height: 12.5rem;
-    margin: 0 auto;
     object-fit: cover;
     overflow: hidden;
     width: 12.5rem;
+    margin: 0 auto;
 }
 
 section img:hover {

@@ -22,11 +22,15 @@ header img {
 header nav ul {
     display: flex;
     flex-flow: row wrap;
-    left: 20px;
     list-style: none;
     position: absolute;
-    right: 20px;
     top: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0;
 }
 
 @media screen and (min-width: 1170px) {
@@ -47,7 +51,7 @@ header nav ul {
     }
 
     header nav ul {
-        justify-content: center;
         top: 22px;
+        width: 39rem;
     }
 }

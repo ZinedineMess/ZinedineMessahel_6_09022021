@@ -13,9 +13,8 @@ export default class HomePageBuilder {
         photographers.map(photographe => {
             const sectionPhotographers = document.getElementById('photographers');
             const articlePhotographers = document.createElement('article');
-            articlePhotographers.className = 'article';
+            articlePhotographers.className = photographe.tags.join(' ') + ' articlePh';
             const templatePhotographer = `
-            <article class="${photographe.tags.join(' ')} article" aria-label='photographers'>
             <a href="photographers.html?id=${photographe.id}" title="${photographe.name}">
                 <img src="${photographe.portrait}" alt="${photographe.alt}">
                 <h2 class="name">${photographe.name}</h2>
@@ -25,7 +24,6 @@ export default class HomePageBuilder {
             <p class="price">${photographe.price}€/jour</p>
             <ul class="filter">${photographe.tags.map(tag =>
                 `<li data-filter="${tag}">#${tag}</li>`).join(" ")}</ul> 
-            </article>
             `
 
             sectionPhotographers.appendChild(articlePhotographers);

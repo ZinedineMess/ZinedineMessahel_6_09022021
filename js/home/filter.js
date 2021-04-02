@@ -6,7 +6,7 @@ export default class Filter {
     // FILTER TAGS
     filter() {
         const filtres = document.querySelector('ul');
-        const articles = document.querySelectorAll('.article article');
+        const articles = document.querySelectorAll('.articlePh');
 
         // EVENT LISTENER ON CLICK LI
         filtres.addEventListener('click', event => {
