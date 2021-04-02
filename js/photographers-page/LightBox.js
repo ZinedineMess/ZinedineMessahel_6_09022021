@@ -18,6 +18,7 @@ export default class Lightbox {
             lightBoxName.innerHTML = `${nameSrc}`;
             currentLightboxIndex = index;
         }))
+        return this
     }
 
     // SCROLL THROUGH THE MEDIAS
@@ -53,6 +54,7 @@ export default class Lightbox {
             lightboxMedia.innerHTML = `${src}`;
             lightBoxName.innerHTML = `${nameSrc}`;
         })
+        return this
     }
 
     // CLOSE LIGHTBOX
@@ -64,6 +66,7 @@ export default class Lightbox {
 
             lightbox.style.display = 'none';
         })
+        return this
     }
 
     // LIGHTBOX KEYBOARD
@@ -107,5 +110,6 @@ export default class Lightbox {
                 lightBoxName.innerHTML = `${nameSrc}`
             }
         });
+        return this
     }
 }

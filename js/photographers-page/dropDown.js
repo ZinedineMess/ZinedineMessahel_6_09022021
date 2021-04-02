@@ -5,7 +5,26 @@ import ApiFishEye from '../Data/ApiFishEye.js';
 import GalleryFactory from '../Factory/GalleryFactory.js';
 
 export default class DropDown {
-    // SORT MEDIAS
+    // EVENTS
+    dropDown() {
+        const arrowOpen = document.getElementsByClassName('arrow-down-open');
+        const arrowClose = document.getElementsByClassName('arrow-up-close');
+        let hiddenSort = document.getElementsByClassName('hidden-sort');
+
+        if (arrowOpen) {
+            arrowOpen[0].addEventListener('click', () => {
+                hiddenSort[0].style.display = 'block';
+            });
+            this.sortMedias();
+        }
+        if (arrowClose) {
+            arrowClose[0].addEventListener('click', () => {
+                hiddenSort[0].style.display = "none";
+            });
+        }
+    }
+
+    // SORT MEDIAS (POPULARITY, DATA, TITLE)
     async sortMedias() {
         let mediaArraySort = [];
         const data = await (new ApiFishEye()).getDataFishEye();
@@ -43,32 +62,16 @@ export default class DropDown {
                     }
                 })
             }
-
-            // DISPLAY PHOTOGRAPHERS WORKS WITH SORT
-            document.getElementById("ph-works").innerHTML = "";
-            let currentMedia = [];
-            let currentMediaName = [];
-            let currentLightboxIndex = null;
-            new GalleryFactory().builder(mediaArraySort, currentMedia, currentMediaName, currentLightboxIndex);
+            this.displayMediaSort(mediaArraySort);
         }));
     }
 
-    // EVENTS
-    dropDown() {
-        const arrowOpen = document.getElementsByClassName('arrow-down-open');
-        const arrowClose = document.getElementsByClassName('arrow-up-close');
-        let hiddenSort = document.getElementsByClassName('hidden-sort');
-
-        if (arrowOpen) {
-            arrowOpen[0].addEventListener('click', () => {
-                hiddenSort[0].style.display = 'block';
-            });
-            this.sortMedias();
-        }
-        if (arrowClose) {
-            arrowClose[0].addEventListener('click', () => {
-                hiddenSort[0].style.display = "none";
-            });
-        }
+    displayMediaSort(mediaArraySort) {
+        // DISPLAY PHOTOGRAPHERS WORKS WITH SORT
+        document.getElementById("ph-works").innerHTML = "";
+        let currentMedia = [];
+        let currentMediaName = [];
+        let currentLightboxIndex = null;
+        new GalleryFactory().builder(mediaArraySort, currentMedia, currentMediaName, currentLightboxIndex);
     }
 }

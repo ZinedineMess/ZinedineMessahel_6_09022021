@@ -59,24 +59,14 @@ export class FormFields {
         const regex = /^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/;
 
         // SEND FORM
-        form.addEventListener('submit', function (e) {
+        form.addEventListener('submit', (e) => {
             e.preventDefault();
-            let firstNameChecked = checkNames(firstName, regex);
-            let lastNameChecked = checkNames(lastName, regex);
-            let emailChecked = checkEmail(email);
-            let messageChecked = checkMessage(message);
+            let isValid = this.checkNames(firstName, regex) &&
+                this.checkNames(lastName, regex) &&
+                this.checkEmail(email) &&
+                this.checkMessage(message);
 
-            function formValidation() {
-                if (firstNameChecked === true &&
-                    lastNameChecked === true &&
-                    emailChecked === true &&
-                    messageChecked === true) {
-                    return true;
-                }
-                return false;
-            }
-
-            if (formValidation() === true) {
+            if (isValid) {
                 firstName.style.border = 'none';
                 lastName.style.border = 'none';
                 email.style.border = 'none';
@@ -90,40 +80,40 @@ export class FormFields {
                 document.getElementById('contact-form').reset();
             }
         });
+    }
 
-        function checkNames(elt, regex) {
-            if (elt.value.trim().length < 2 || elt.value.trim() === "" || !elt.value.match(regex)) {
-                elt.parentElement.setAttribute('data-error-visible', 'true');
-                elt.style.border = '2px solid #e54858';
-                return false;
-            } else {
-                elt.parentElement.setAttribute('data-error-visible', 'false');
-                elt.style.border = 'solid #279e7a 0.19rem';
-                return true;
-            }
-        }
-
-        function checkEmail(elt) {
-            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            if (elt.value.trim().match(re)) {
-                elt.parentElement.setAttribute('data-error-visible', 'false');
-                elt.style.border = 'solid #279e7a 0.19rem';
-                return true;
-            }
+    checkNames(elt, regex) {
+        if (elt.value.trim().length < 2 || elt.value.trim() === "" || !elt.value.match(regex)) {
             elt.parentElement.setAttribute('data-error-visible', 'true');
             elt.style.border = '2px solid #e54858';
             return false;
-        }
-
-        function checkMessage(elt) {
-            if (elt.value.trim() === '' || elt.value.trim() == null) {
-                elt.parentElement.setAttribute('data-error-visible', 'true');
-                elt.style.border = '2px solid #e54858';
-                return false;
-            }
+        } else {
             elt.parentElement.setAttribute('data-error-visible', 'false');
             elt.style.border = 'solid #279e7a 0.19rem';
             return true;
         }
+    }
+
+    checkEmail(elt) {
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (elt.value.trim().match(re)) {
+            elt.parentElement.setAttribute('data-error-visible', 'false');
+            elt.style.border = 'solid #279e7a 0.19rem';
+            return true;
+        }
+        elt.parentElement.setAttribute('data-error-visible', 'true');
+        elt.style.border = '2px solid #e54858';
+        return false;
+    }
+
+    checkMessage(elt) {
+        if (elt.value.trim() === '' || elt.value.trim() == null) {
+            elt.parentElement.setAttribute('data-error-visible', 'true');
+            elt.style.border = '2px solid #e54858';
+            return false;
+        }
+        elt.parentElement.setAttribute('data-error-visible', 'false');
+        elt.style.border = 'solid #279e7a 0.19rem';
+        return true;
     }
 }

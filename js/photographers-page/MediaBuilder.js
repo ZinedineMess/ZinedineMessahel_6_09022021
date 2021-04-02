@@ -5,16 +5,16 @@ import ApiFishEye from '../Data/ApiFishEye.js';
 import GalleryFactory from '../Factory/GalleryFactory.js';
 
 export default class MediaBuilder {
+
     async photographersMedias() {
         let data = await (new ApiFishEye()).getDataFishEye();
         let media = data.media;
         let currentMedia = [];
         let currentMediaName = [];
         let currentLightboxIndex = null;
-        let totalLike = 0;
 
-        new GalleryFactory().builder(media, currentMedia, currentMediaName, currentLightboxIndex, totalLike);
-        this.boxLikesAndPrice(totalLike, data.photographers);
+        let gallery = new GalleryFactory().builder(media, currentMedia, currentMediaName, currentLightboxIndex);
+        this.boxLikesAndPrice(gallery.totalLike, data.photographers);
     }
 
     boxLikesAndPrice(totalLike, photographers) {

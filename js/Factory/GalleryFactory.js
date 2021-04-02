@@ -5,11 +5,15 @@ import MediaFactory from './MediaFactory.js';
 import Lightbox from '../photographers-page/LightBox.js';
 
 export default class GalleryFactory {
-    builder(media, currentMedia, currentMediaName, currentLightboxIndex, totalLike) {
+    constructor() {
+        this.totalLike = 0;
+    }
+    
+    builder(dataMedia, currentMedia, currentMediaName, currentLightboxIndex) {
         const id = window.location.search.split('id=')[1];
         let mediaFactory = new MediaFactory();
 
-        media.forEach(element => {
+        dataMedia.forEach(element => {
             if (id == element.photographerId) {
                 let sectionPhWorks = document.getElementById('ph-works');
                 let articlePhWork = document.createElement("article");
@@ -30,14 +34,16 @@ export default class GalleryFactory {
                 articlePhWork.innerHTML = workTemplate;
                 sectionPhWorks.appendChild(articlePhWork);
                 articlePhWork.classList.add("ph-work-elt");
-                totalLike += parseInt(element.likes);
+                this.totalLike += parseInt(element.likes);
                 currentMedia.push(mediaHTML.outerHTML);
                 currentMediaName.push(element.photoName);
-                (new Lightbox()).launchLightBox(currentMedia, currentMediaName, currentLightboxIndex);
-                (new Lightbox()).switchPhWorks(currentMedia, currentMediaName, currentLightboxIndex);
-                (new Lightbox()).closeLightBox();
-                (new Lightbox()).lightboxKeyboard(currentMedia, currentMediaName, currentLightboxIndex);
+                (new Lightbox())
+                    .launchLightBox(currentMedia, currentMediaName, currentLightboxIndex)
+                    .switchPhWorks(currentMedia, currentMediaName, currentLightboxIndex)
+                    .closeLightBox()
+                    .lightboxKeyboard(currentMedia, currentMediaName, currentLightboxIndex);
             }
         })
+        return this;
     }
 }
