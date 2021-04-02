@@ -14,29 +14,26 @@ import {
     FormFields
 } from './photographers-page/form.js';
 
-class PagesBuilder {
-    render() {
-        if (window.location.pathname == '/index.html' || window.location.pathname == '/index.html#') {
-            // HOMEPAGE (PHOTOGRAPHERS, SCROLL, FILTER)
-            new HomePageBuilder().displayPhotographers();
-        } else if (window.location.pathname == '/photographers.html') {
-            // PHOTOGRAPHER PROFIL HEADER
-            new PhotographerProfil().displayPhotographerProfil();
 
-            //PHOTOGRAPHER GALLERY & LIKES BOX
-            new MediaBuilder().photographersMedias();
+(function appDispatch() {
+    if (window.location.pathname == '/index.html' || window.location.pathname == '/index.html#') {
+        // HOMEPAGE (PHOTOGRAPHERS, SCROLL, FILTER)
+        new HomePageBuilder().displayPhotographers();
+    } else if (window.location.pathname == '/photographers.html') {
+        // PHOTOGRAPHER PROFIL HEADER
+        new PhotographerProfil().displayPhotographerProfil();
 
-            // LIKES
-            new Likes().likes();
+        //PHOTOGRAPHER GALLERY & LIKES BOX
+        new MediaBuilder().photographersMedias();
 
-            // DROPDOWN MENU
-            new DropDown().dropDown();
+        // LIKES
+        new Likes().likes();
 
-            // CONTACT FORM & FORM FIELDS
-            new Form().modal();
-            new FormFields().fields();
-        }
+        // DROPDOWN MENU
+        new DropDown().dropDown();
+
+        // CONTACT FORM & FORM FIELDS
+        new Form().modal();
+        new FormFields().fields();
     }
-}
-
-new PagesBuilder().render();
+})();

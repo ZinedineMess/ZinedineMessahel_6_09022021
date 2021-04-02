@@ -1,3 +1,4 @@
+/* PH WORKS MEDIAS */
 #ph-works {
     display: flex;
     flex-wrap: wrap;
@@ -6,53 +7,50 @@
     padding: 0 1.25rem;
 }
 
+.btn-like {
+    background: none;
+    border: none;
+    color: #901c1c;
+    font-size: 1.1rem;
+    margin-left: -.3rem;
+}
+
 .ph-work-elt {
     color: #901c1c;
     font-size: 1.1em;
     font-weight: 500;
+    margin: 0 0 .625rem;
     width: 20.9375rem;
-    margin: 0 0 0.625rem 0;
 }
 
-.ph-work-elt h2 {
-    font-size: 1em;
-    font-weight: 400;
-}
-
-.ph-work-elt-text {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0;
-    align-items: center;
+.ph-work-elt .fa-heart:hover,
+.ph-work-elt img:hover,
+.ph-work-elt video:hover {
+    cursor: pointer;
 }
 
 .ph-work-elt .ph-work-title {
     width: 14.0625rem;
 }
 
-.ph-work-elt .fa-heart:hover {
-    cursor: pointer;
-}
-
-.btn-like {
-    border: none;
-    background: none;
-    color: #901c1c;
-    font-size: 1.1rem;
-    margin-left: -0.3rem;
-}
-
 .ph-work-elt img,
 .ph-work-elt video {
-    width: 20.9375rem;
+    border-radius: .3125rem;
     height: 11.875rem;
     object-fit: cover;
-    border-radius: 0.3125rem;
+    width: 20.9375rem;
 }
 
-.ph-work-elt img:hover,
-.ph-work-elt video:hover {
-    cursor: pointer;
+.ph-work-elt-text {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+}
+
+.ph-work-title {
+    font-size: 1em;
+    font-weight: 400;
 }
 
 @media (min-width: 1300px) {
@@ -68,7 +66,7 @@
 
     .ph-work-elt img,
     .ph-work-elt video {
-        width: 21.875rem;
         height: 18.75rem;
+        width: 21.875rem;
     }
 }

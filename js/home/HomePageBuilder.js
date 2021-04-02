@@ -15,10 +15,10 @@ export default class HomePageBuilder {
             const articlePhotographers = document.createElement('article');
             articlePhotographers.className = 'article';
             const templatePhotographer = `
-            <article class="${photographe.tags.join(' ')}" aria-label='photographers'>
+            <article class="${photographe.tags.join(' ')} article" aria-label='photographers'>
             <a href="photographers.html?id=${photographe.id}" title="${photographe.name}">
-                <img src="${photographe.portrait}" alt="photo de ${photographe.name}">
-                <h1 class="name">${photographe.name}</h1>
+                <img src="${photographe.portrait}" alt="${photographe.alt}">
+                <h2 class="name">${photographe.name}</h2>
             </a>
             <p class="location">${photographe.city}, ${photographe.country}</p>
             <p class="tagline">${photographe.tagline}</p>

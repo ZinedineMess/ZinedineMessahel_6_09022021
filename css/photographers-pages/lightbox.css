@@ -1,99 +1,94 @@
-#works-lightbox {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 200vw;
-    top: 0;
-    left: 0;
-    background-color: rgb(255, 255, 255);
-    z-index: 2;
-}
-
+/* LIGHTBOX */
 #lightbox-body {
-    position: fixed;
-    width: 60%;
+    background-color: #fff;
     height: 90%;
     left: 50%;
-    top: 3%;
     margin: 0 auto;
-    background-color: rgb(255, 255, 255);
+    position: fixed;
     text-align: center;
+    top: 3%;
     transform: translate(-50%, 0);
-}
-
-.close-lightbox-icon {
-    position: absolute;
-    color: #901C1C;
-    font-size: 1.7rem;
-    top: 0.5rem;
-    right: -3rem;
-}
-
-.left-arrow-lightbox {
-    position: absolute;
-    color: #901C1C;
-    font-size: 2rem;
-    top: 48%;
-    left: -3rem;
-}
-
-.right-arrow-lightbox {
-    position: absolute;
-    color: #901C1C;
-    font-size: 2rem;
-    top: 48%;
-    right: -3rem;
-}
-
-#works-lightbox-name {
-    color: #901C1C;
-    font-family: sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
+    width: 60%;
 }
 
 #works-lightbox-media {
-    width: 90%;
-    height: 100%;
-    margin: 0 auto;
     background-color: rgba(255, 255, 255, 0);
-    overflow: hidden;
-}
-
-#works-lightbox-media img {
-    width: 90%;
     height: 100%;
-    object-fit: cover;
+    margin: 0 auto 1rem;
+    overflow: hidden;
+    width: 90%;
 }
 
 #works-lightbox-media img,
 #works-lightbox-media video {
-    width: 100%;
     height: 100%;
     object-fit: contain;
+    width: 100%;
+}
+
+.close-lightbox-icon {
+    color: #901C1C;
+    font-size: 1.7rem;
+    position: absolute;
+    right: -3rem;
+    top: .5rem;
+}
+
+.left-arrow-lightbox {
+    color: #901C1C;
+    font-size: 2rem;
+    left: -3rem;
+    position: absolute;
+    top: 48%;
+}
+
+.right-arrow-lightbox {
+    color: #901C1C;
+    font-size: 2rem;
+    position: absolute;
+    right: -3rem;
+    top: 48%;
+}
+
+aside {
+    background-color: #fff;
+    display: none;
+    height: 200vw;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+aside article:nth-last-child(1) {
+    color: #901C1C;
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 @media (min-width: 600px) {
     .close-lightbox-icon {
-        top: 0.5rem;
-        right: 1rem;
         cursor: pointer;
+        right: 1rem;
+        top: .5rem;
     }
 
     .left-arrow-lightbox {
-        top: 48%;
-        left: 0rem;
         cursor: pointer;
+        left: 0;
+        top: 48%;
     }
 
     .right-arrow-lightbox {
-        top: 48%;
-        right: 0rem;
         cursor: pointer;
+        right: 0;
+        top: 48%;
     }
 
-    #works-lightbox-name {
-        padding: 0.5rem 0rem;
+    aside article:nth-last-child(1) {
         left: 23%;
+        padding: .5rem 0;
     }
 }

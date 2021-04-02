@@ -3,44 +3,10 @@
 
 // FUNCTION FILTER TAGS
 export default class Filter {
+    // FILTER TAGS
     filter() {
         const filtres = document.querySelector('ul');
         const articles = document.querySelectorAll('.article article');
-
-        // GET ACTIVE FILTER
-        function getActiveFilters() {
-            let currentFilters = document.querySelectorAll('ul li.actived');
-            let filterSelected = [];
-
-            currentFilters.forEach(function (currentFilter) {
-                filterSelected.push(currentFilter.getAttribute("data-filter"));
-            });
-
-            return filterSelected;
-        }
-
-        // OWN ALL FILTERS
-        function ownAllFilters(article) {
-            let filters = getActiveFilters();
-            let classValue = article.classList.value;
-            let classes = classValue.split(' ');
-            let intersection = filters.filter(
-                x => classes.includes(x)
-            );
-
-            return filters.length == intersection.length;
-        }
-
-        // GET ACTIVE FILTER
-        function refreshArticles() {
-            articles.forEach(function (article) {
-                if (ownAllFilters(article)) {
-                    article.style.display = 'block';
-                } else {
-                    article.style.display = 'none';
-                }
-            });
-        }
 
         // EVENT LISTENER ON CLICK LI
         filtres.addEventListener('click', event => {
@@ -52,7 +18,42 @@ export default class Filter {
                 event.target.classList.remove('actived')
             }
 
-            refreshArticles();
+            this.refreshArticles(articles);
+        });
+    }
+
+    // GET ACTIVE FILTER
+    getActiveFilters() {
+        let currentFilters = document.querySelectorAll('ul li.actived');
+        let filterSelected = [];
+
+        currentFilters.forEach(function (currentFilter) {
+            filterSelected.push(currentFilter.getAttribute("data-filter"));
+        });
+
+        return filterSelected;
+    }
+
+    // OWN ALL FILTERS
+    ownAllFilters(article) {
+        let filters = this.getActiveFilters();
+        let classValue = article.classList.value;
+        let classes = classValue.split(' ');
+        let intersection = filters.filter(
+            x => classes.includes(x)
+        );
+
+        return filters.length == intersection.length;
+    }
+
+    // SHOW OR HIDE ARTICLES
+    refreshArticles(articles) {
+        articles.forEach((article) => {
+            if (this.ownAllFilters(article)) {
+                article.style.display = 'block';
+            } else {
+                article.style.display = 'none';
+            }
         });
     }
 }
