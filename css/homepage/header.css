@@ -22,15 +22,15 @@ header img {
 header nav ul {
     display: flex;
     flex-flow: row wrap;
+    left: 0;
     list-style: none;
-    position: absolute;
-    top: 90px;
     margin-left: auto;
     margin-right: auto;
-    left: 0;
+    padding: 0;
+    position: absolute;
     right: 0;
     text-align: center;
-    padding: 0;
+    top: 90px;
 }
 
 @media screen and (min-width: 1170px) {

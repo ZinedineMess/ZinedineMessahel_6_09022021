@@ -16,10 +16,10 @@ import {
 
 
 (function appDispatch() {
-    if (window.location.pathname == '/index.html' || window.location.pathname == '/index.html#') {
+    if (window.location.pathname === "/ZinedineMessahel_6_09022021/" || window.location.pathname === "/ZinedineMessahel_6_09022021/index.html") {
         // HOMEPAGE (PHOTOGRAPHERS, SCROLL, FILTER)
         new HomePageBuilder().displayPhotographers();
-    } else if (window.location.pathname == '/photographers.html') {
+    } else if (window.location.pathname === "/ZinedineMessahel_6_09022021/photographers.html") {
         // PHOTOGRAPHER PROFIL HEADER
         new PhotographerProfil().displayPhotographerProfil();
 

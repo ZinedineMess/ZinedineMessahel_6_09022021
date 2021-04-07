@@ -69,9 +69,6 @@ export default class DropDown {
     displayMediaSort(mediaArraySort) {
         // DISPLAY PHOTOGRAPHERS WORKS WITH SORT
         document.getElementById("ph-works").innerHTML = "";
-        let currentMedia = [];
-        let currentMediaName = [];
-        let currentLightboxIndex = null;
-        new GalleryFactory().builder(mediaArraySort, currentMedia, currentMediaName, currentLightboxIndex);
+        new GalleryFactory().builder(mediaArraySort);
     }
 }

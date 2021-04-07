@@ -1,9 +1,9 @@
 /* PHOTOGRAPHERS SECTION */
 .articlePh {
-    text-align: center;
-    width: 22rem;
     margin: .5rem;
     padding: .3rem;
+    text-align: center;
+    width: 22rem;
 }
 
 .articlePh a {
@@ -43,8 +43,8 @@ section {
     justify-content: space-evenly;
     margin-bottom: 5rem;
     margin-top: 7rem;
-    width: 100%;
     padding: 0;
+    width: 100%;
 }
 
 section img {
@@ -52,10 +52,10 @@ section img {
     border-radius: 50%;
     box-shadow: 0 0 .8rem rgba(134, 134, 134, 0.432);
     height: 12.5rem;
+    margin: 0 auto;
     object-fit: cover;
     overflow: hidden;
     width: 12.5rem;
-    margin: 0 auto;
 }
 
 section img:hover {

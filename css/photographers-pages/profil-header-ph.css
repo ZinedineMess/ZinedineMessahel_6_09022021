@@ -57,10 +57,10 @@
     border-radius: .6875rem;
     color: #901C1C;
     font-size: 12px;
-    text-decoration: none;
-    transition: all .2s;
     margin: 0;
     padding: .0625rem .375rem;
+    text-decoration: none;
+    transition: all .2s;
 }
 
 .ph-tags:hover {
