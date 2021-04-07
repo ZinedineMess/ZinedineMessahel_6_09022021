@@ -14,7 +14,6 @@ import {
     FormFields
 } from './photographers-page/form.js';
 
-
 (function appDispatch() {
     if (window.location.pathname === "/ZinedineMessahel_6_09022021/" || window.location.pathname === "/ZinedineMessahel_6_09022021/index.html") {
         // HOMEPAGE (PHOTOGRAPHERS, SCROLL, FILTER)

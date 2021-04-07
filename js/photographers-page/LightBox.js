@@ -19,6 +19,7 @@ export default class LightBox {
         this.previous(currentMedia, currentMediaName);
         this.next(currentMedia, currentMediaName);
         this.close();
+        this.keyboard(currentMedia, currentMediaName);
         return this
     }
 
@@ -26,8 +27,8 @@ export default class LightBox {
         let prevBtn = document.querySelector('.left-arrow-lightbox');
         prevBtn.addEventListener('click', () => {
             this.currentIndex -= 1;
-            const lightBoxMedia = document.getElementById('works-lightbox-media');
-            const lightBoxName = document.getElementById('works-lightbox-name');
+            let lightBoxMedia = document.getElementById('works-lightbox-media');
+            let lightBoxName = document.getElementById('works-lightbox-name');
 
             if (this.currentIndex < 0) {
                 this.currentIndex = currentMedia.length - 1;
@@ -46,8 +47,8 @@ export default class LightBox {
         let nextBtn = document.querySelector('.right-arrow-lightbox');
         nextBtn.addEventListener('click', () => {
             this.currentIndex += 1;
-            const lightBoxMedia = document.getElementById('works-lightbox-media');
-            const lightBoxName = document.getElementById('works-lightbox-name');
+            let lightBoxMedia = document.getElementById('works-lightbox-media');
+            let lightBoxName = document.getElementById('works-lightbox-name');
 
             if (this.currentIndex > currentMediaName.length - 1) {
                 this.currentIndex = 0;
@@ -69,8 +70,11 @@ export default class LightBox {
         })
     }
 
-    keyboard() {
+    keyboard(currentMedia, currentMediaName) {
         document.addEventListener('keydown', (key) => {
+            let lightBoxMedia = document.getElementById('works-lightbox-media');
+            let lightBoxName = document.getElementById('works-lightbox-name');
+
             // ESCAPE TO CLOSE
             if (key.code == "Escape") {
                 let lightBox = document.getElementById('works-lightbox');
@@ -79,34 +83,31 @@ export default class LightBox {
 
             // ARROW RIGHT TO STEP RIGHT
             else if (key.code == "ArrowRight") {
-                currentLightboxIndex += 1;
-                const lightboxMedia = document.getElementById('works-lightbox-media');
-                const lightBoxName = document.getElementById('works-lightbox-name');
-
-                if (currentLightboxIndex > currentMedia.length - 1) {
-                    currentLightboxIndex = 0;
+                this.currentIndex += 1;
+                if (this.currentIndex > currentMediaName.length - 1) {
+                    this.currentIndex = 0;
                 }
-                let src = currentMedia[currentLightboxIndex];
-                let nameSrc = currentMediaName[currentLightboxIndex];
 
-                lightboxMedia.innerHTML = `${src}`;
-                lightBoxName.innerHTML = `${nameSrc}`
+                let src = currentMedia[this.currentIndex];
+                let nameSrc = currentMediaName[this.currentIndex];
+
+                lightBoxMedia.innerHTML = `${src}`;
+                lightBoxName.innerHTML = `${nameSrc}`;
             }
 
             // ARROW LEFT TO STEP LEFT
             else if (key.code == "ArrowLeft") {
-                currentLightboxIndex -= 1;
-                const lightboxMedia = document.getElementById('works-lightbox-media');
-                const lightBoxName = document.getElementById('works-lightbox-name');
-
-                if (currentLightboxIndex < 0) {
-                    currentLightboxIndex = currentMedia.length - 1;
+                this.currentIndex -= 1;
+                if (this.currentIndex < 0) {
+                    this.currentIndex = currentMedia.length - 1;
+                    this.currentIndex = currentMediaName.length - 1;
                 }
-                let src = currentMedia[currentLightboxIndex];
-                let nameSrc = currentMediaName[currentLightboxIndex];
 
-                lightboxMedia.innerHTML = `${src}`;
-                lightBoxName.innerHTML = `${nameSrc}`
+                let src = currentMedia[this.currentIndex];
+                let nameSrc = currentMediaName[this.currentIndex];
+
+                lightBoxMedia.innerHTML = `${src}`;
+                lightBoxName.innerHTML = `${nameSrc}`;
             }
         });
     }
