@@ -2,7 +2,7 @@
 /////////////////////////////////////////
 
 import PhotographerProfil from './PhotographerProfil.js';
-import ApiFishEye from '../Data/ApiFishEye.js';
+import ApiFishEye from '../data/ApiFishEye.js';
 
 export class Form {
     // LAUNCH MODAL

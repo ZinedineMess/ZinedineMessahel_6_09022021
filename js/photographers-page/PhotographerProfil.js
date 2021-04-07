@@ -1,7 +1,7 @@
 'use strict';
 /////////////////////////////////////////
 
-import ApiFishEye from '../Data/ApiFishEye.js';
+import ApiFishEye from '../data/ApiFishEye.js';
 
 // DISPLAY PHOTOGRAPHERS PROFILS
 export default class PhotographerProfil {

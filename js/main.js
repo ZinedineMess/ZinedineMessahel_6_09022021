@@ -6,9 +6,9 @@ import HomePageBuilder from './home/HomePageBuilder.js';
 
 // PHOTOGRAPHERS PAGES
 import PhotographerProfil from './photographers-page/PhotographerProfil.js';
-import DropDown from './photographers-page/DropDown.js';
+import DropDown from './photographers-page/dropDown.js';
 import MediaBuilder from './photographers-page/MediaBuilder.js';
-import Likes from './photographers-page/Likes.js';
+import Likes from './photographers-page/likes.js';
 import {
     Form,
     FormFields

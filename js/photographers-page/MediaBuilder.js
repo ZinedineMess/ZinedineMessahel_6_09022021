@@ -1,7 +1,7 @@
 'use strict';
 /////////////////////////////////////////
 
-import ApiFishEye from '../Data/ApiFishEye.js';
+import ApiFishEye from '../data/ApiFishEye.js';
 import GalleryFactory from '../Factory/GalleryFactory.js';
 
 export default class MediaBuilder {

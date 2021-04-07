@@ -1,8 +1,8 @@
 'use strict';
 /////////////////////////////////////////
 
-import ApiFishEye from '../Data/ApiFishEye.js';
-import Filter from './Filter.js';
+import ApiFishEye from '../data/ApiFishEye.js';
+import Filter from './filter.js';
 import Scroll from './Scroll.js';
 
 // DISPLAY ALL PHOTOGRAPHERS BY DEFAULT
