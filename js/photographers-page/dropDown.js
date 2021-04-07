@@ -35,14 +35,12 @@ export default class DropDown {
 
         sortBtn.forEach((btn, index) => btn.addEventListener('click', () => {
             hiddenSort[0].style.display = "none";
-
             if (index == 0) {
                 btnSort.innerHTML = `Popularité`;
 
                 mediaArraySort = media.sort((a, b) => { // SORT BY POPULARITY  
                     return b.likes - a.likes
                 })
-
 
             } else if (index == 1) {
                 btnSort.innerHTML = `Date`;

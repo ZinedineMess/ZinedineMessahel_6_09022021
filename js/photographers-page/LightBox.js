@@ -19,16 +19,15 @@ export default class LightBox {
             lightBoxMedia.innerHTML = `${src}`;
             lightBoxName.innerHTML = `${nameSrc}`;
         }))
-        this.previous(currentMedia, currentMediaName);
-        this.next(currentMedia, currentMediaName);
+        this.previous(document.querySelector('.left-arrow-lightbox'), currentMedia, currentMediaName);
+        this.next(document.querySelector('.right-arrow-lightbox'), currentMedia, currentMediaName);
         this.close();
         this.keyboard(currentMedia, currentMediaName);
         return this
     }
 
-    previous(media, name) {
-        let prevBtn = document.querySelector('.left-arrow-lightbox');
-        prevBtn.addEventListener('click', () => {
+    previous(elt, media, name) {
+        elt.addEventListener('click', () => {
             this.currentIndex -= 1;
             const lightBoxMedia = document.getElementById('works-lightbox-media');
             const lightBoxName = document.getElementById('works-lightbox-name');
@@ -46,9 +45,8 @@ export default class LightBox {
         })
     }
 
-    next(media, name) {
-        let nextBtn = document.querySelector('.right-arrow-lightbox');
-        nextBtn.addEventListener('click', () => {
+    next(elt, media, name) {
+        elt.addEventListener('click', () => {
             this.currentIndex += 1;
             const lightBoxMedia = document.getElementById('works-lightbox-media');
             const lightBoxName = document.getElementById('works-lightbox-name');
@@ -77,6 +75,7 @@ export default class LightBox {
         document.addEventListener('keydown', (key) => {
             const lightBoxMedia = document.getElementById('works-lightbox-media');
             const lightBoxName = document.getElementById('works-lightbox-name');
+
             // ESCAPE TO CLOSE
             if (key.code == "Escape") {
                 let lightBox = document.getElementById('works-lightbox');

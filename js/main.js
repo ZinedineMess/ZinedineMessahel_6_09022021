@@ -9,10 +9,6 @@ import PhotographerProfil from './photographers-page/PhotographerProfil.js';
 import DropDown from './photographers-page/dropDown.js';
 import MediaBuilder from './photographers-page/MediaBuilder.js';
 import Likes from './photographers-page/likes.js';
-import {
-    Form,
-    FormFields
-} from './photographers-page/form.js';
 
 (function appDispatch() {
     if (window.location.pathname === "/ZinedineMessahel_6_09022021/" || window.location.pathname === "/ZinedineMessahel_6_09022021/index.html") {
@@ -30,9 +26,5 @@ import {
 
         // DROPDOWN MENU
         new DropDown().dropDown();
-
-        // CONTACT FORM & FORM FIELDS
-        new Form().modal();
-        new FormFields().fields();
     }
 })();

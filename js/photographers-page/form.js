@@ -1,9 +1,6 @@
 'use strict';
 /////////////////////////////////////////
 
-import PhotographerProfil from './PhotographerProfil.js';
-import ApiFishEye from '../data/ApiFishEye.js';
-
 export class Form {
     // LAUNCH MODAL
     launchModal() {
@@ -20,9 +17,7 @@ export class Form {
     }
 
     // DISPLAY PH NAMES IN FORM
-    async formPhName() {
-        let data = await (new ApiFishEye()).getDataFishEye();
-        let photographersData = data.photographers;
+    formPhName(photographersData) {
         let id = window.location.search.split('id=')[1];
         let photographers = !id ? photographersData : photographersData.filter(photographer => photographer.id == id);
 
@@ -33,14 +28,13 @@ export class Form {
         })
     }
 
-    async modal() {
-        await (new PhotographerProfil()).displayPhotographerProfil();
+    modal(photographersData) {
         let modalBtn = document.getElementById("ph-contact");
         let closeBtn = document.getElementsByClassName('close-form-icon');
 
         if (modalBtn) {
             modalBtn.addEventListener('click', this.launchModal);
-            this.formPhName();
+            this.formPhName(photographersData);
         }
         if (closeBtn) {
             closeBtn[0].addEventListener('click', this.closeModal);
@@ -71,15 +65,28 @@ export class FormFields {
                 lastName.style.border = 'none';
                 email.style.border = 'none';
                 message.style.border = 'none';
-                console.group('Contact Message');
-                console.log('Prénom : ' + firstName.value);
-                console.log('Nom : ' + lastName.value);
-                console.log('Email : ' + email.value);
-                console.log('Message : ' + message.value);
-                console.groupEnd();
+                this.consoleMessageValid(firstName, lastName, email, message);
                 document.getElementById('contact-form').reset();
+            } else {
+                this.errorVerification(firstName, lastName, email, message, regex);
             }
         });
+    }
+
+    consoleMessageValid(firstName, lastName, email, message) {
+        console.group('Contact Message');
+        console.log('Prénom : ' + firstName.value);
+        console.log('Nom : ' + lastName.value);
+        console.log('Email : ' + email.value);
+        console.log('Message : ' + message.value);
+        console.groupEnd();
+    }
+
+    errorVerification(firstName, lastName, email, message, regex) {
+        this.checkNames(firstName, regex);
+        this.checkNames(lastName, regex);
+        this.checkEmail(email);
+        this.checkMessage(message);
     }
 
     checkNames(elt, regex) {

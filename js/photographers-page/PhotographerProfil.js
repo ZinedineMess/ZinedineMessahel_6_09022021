@@ -2,6 +2,10 @@
 /////////////////////////////////////////
 
 import ApiFishEye from '../data/ApiFishEye.js';
+import {
+    Form,
+    FormFields
+} from './form.js';
 
 // DISPLAY PHOTOGRAPHERS PROFILS
 export default class PhotographerProfil {
@@ -27,5 +31,7 @@ export default class PhotographerProfil {
 
             sectionPhotographerProfil.innerHTML = templatePhotographerProfil;
         })
+        new Form().modal(photographersData);
+        new FormFields().fields();
     }
 }
