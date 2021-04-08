@@ -22,10 +22,15 @@ header img {
 header nav ul {
     display: flex;
     flex-flow: row wrap;
-    left: 20px;
+    justify-content: center;
+    left: 0;
     list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
     position: absolute;
-    right: 20px;
+    right: 0;
+    text-align: center;
     top: 90px;
 }
 
@@ -47,7 +52,7 @@ header nav ul {
     }
 
     header nav ul {
-        justify-content: center;
         top: 22px;
+        width: 39rem;
     }
 }

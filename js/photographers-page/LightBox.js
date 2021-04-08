@@ -1,77 +1,81 @@
 'use strict';
 /////////////////////////////////////////
 
-export default class Lightbox {
-    // LAUNCH LIGHTBOX
-    launchLightBox(currentMedia, currentMediaName, currentLightboxIndex) {
-        const getWorks = Array.from(document.getElementsByClassName('ph-media'));
+export default class LightBox {
+    constructor() {
+        this.currentIndex = 0;
+    }
 
-        getWorks.forEach((mediaWorks, index) => mediaWorks.addEventListener("click", () => {
-            let lightBox = document.getElementById('works-lightbox');
+    init(currentMedia, currentMediaName) {
+        const getMedias = Array.from(document.getElementsByClassName('ph-media'));
+        getMedias.forEach((mediaWorks, index) => mediaWorks.addEventListener("click", () => {
             let lightBoxMedia = document.getElementById('works-lightbox-media');
             let lightBoxName = document.getElementById('works-lightbox-name');
             let src = currentMedia[index];
             let nameSrc = currentMediaName[index];
+            this.currentIndex = index;
 
-            lightBox.style.display = 'block';
+            document.getElementById('works-lightbox').style.display = 'block';
             lightBoxMedia.innerHTML = `${src}`;
             lightBoxName.innerHTML = `${nameSrc}`;
-            currentLightboxIndex = index;
         }))
+        this.previous(document.querySelector('.left-arrow-lightbox'), currentMedia, currentMediaName);
+        this.next(document.querySelector('.right-arrow-lightbox'), currentMedia, currentMediaName);
+        this.close();
+        this.keyboard(currentMedia, currentMediaName);
         return this
     }
 
-    // SCROLL THROUGH THE MEDIAS
-    switchPhWorks(currentMedia, currentMediaName, currentLightboxIndex) {
-        const previousBtn = document.querySelector('.left-arrow-lightbox');
-        const nextBtn = document.querySelector('.right-arrow-lightbox');
-        let lightboxMedia = document.getElementById('works-lightbox-media');
-        let lightBoxName = document.getElementById('works-lightbox-name');
+    previous(elt, media, name) {
+        elt.addEventListener('click', () => {
+            this.currentIndex -= 1;
+            const lightBoxMedia = document.getElementById('works-lightbox-media');
+            const lightBoxName = document.getElementById('works-lightbox-name');
 
-        previousBtn.addEventListener('click', () => {
-            currentLightboxIndex -= 1;
-            if (currentLightboxIndex < 0) {
-                currentLightboxIndex = currentMedia.length - 1;
-                currentLightboxIndex = currentMediaName.length - 1;
+            if (this.currentIndex < 0) {
+                this.currentIndex = media.length - 1;
+                this.currentIndex = name.length - 1;
             }
 
-            let src = currentMedia[currentLightboxIndex];
-            let nameSrc = currentMediaName[currentLightboxIndex];
+            let src = media[this.currentIndex];
+            let nameSrc = name[this.currentIndex];
 
-            lightboxMedia.innerHTML = `${src}`;
-            lightBoxName.innerHTML = `${nameSrc}`;
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentLightboxIndex += 1;
-            if (currentLightboxIndex > currentMediaName.length - 1) {
-                currentLightboxIndex = 0;
-            }
-
-            let src = currentMedia[currentLightboxIndex];
-            let nameSrc = currentMediaName[currentLightboxIndex];
-
-            lightboxMedia.innerHTML = `${src}`;
+            lightBoxMedia.innerHTML = `${src}`;
             lightBoxName.innerHTML = `${nameSrc}`;
         })
-        return this
     }
 
-    // CLOSE LIGHTBOX
-    closeLightBox() {
-        const closeBtn = document.querySelector('.close-lightbox-icon');
+    next(elt, media, name) {
+        elt.addEventListener('click', () => {
+            this.currentIndex += 1;
+            const lightBoxMedia = document.getElementById('works-lightbox-media');
+            const lightBoxName = document.getElementById('works-lightbox-name');
 
-        closeBtn.addEventListener('click', () => {
+            if (this.currentIndex > name.length - 1) {
+                this.currentIndex = 0;
+            }
+
+            let src = media[this.currentIndex];
+            let nameSrc = name[this.currentIndex];
+
+            lightBoxMedia.innerHTML = `${src}`;
+            lightBoxName.innerHTML = `${nameSrc}`;
+        })
+    }
+
+    close() {
+        document.querySelector('.close-lightbox-icon').addEventListener('click', () => {
             const lightbox = document.getElementById('works-lightbox');
 
             lightbox.style.display = 'none';
         })
-        return this
     }
 
-    // LIGHTBOX KEYBOARD
-    lightboxKeyboard(currentMedia, currentMediaName, currentLightboxIndex) {
+    keyboard(currentMedia, currentMediaName) {
         document.addEventListener('keydown', (key) => {
+            const lightBoxMedia = document.getElementById('works-lightbox-media');
+            const lightBoxName = document.getElementById('works-lightbox-name');
+
             // ESCAPE TO CLOSE
             if (key.code == "Escape") {
                 let lightBox = document.getElementById('works-lightbox');
@@ -80,36 +84,34 @@ export default class Lightbox {
 
             // ARROW RIGHT TO STEP RIGHT
             else if (key.code == "ArrowRight") {
-                currentLightboxIndex += 1;
-                const lightboxMedia = document.getElementById('works-lightbox-media');
-                const lightBoxName = document.getElementById('works-lightbox-name');
+                this.currentIndex += 1;
 
-                if (currentLightboxIndex > currentMedia.length - 1) {
-                    currentLightboxIndex = 0;
+                if (this.currentIndex > currentMediaName.length - 1) {
+                    this.currentIndex = 0;
                 }
-                let src = currentMedia[currentLightboxIndex];
-                let nameSrc = currentMediaName[currentLightboxIndex];
 
-                lightboxMedia.innerHTML = `${src}`;
-                lightBoxName.innerHTML = `${nameSrc}`
+                let src = currentMedia[this.currentIndex];
+                let nameSrc = currentMediaName[this.currentIndex];
+
+                lightBoxMedia.innerHTML = `${src}`;
+                lightBoxName.innerHTML = `${nameSrc}`;
             }
 
             // ARROW LEFT TO STEP LEFT
             else if (key.code == "ArrowLeft") {
-                currentLightboxIndex -= 1;
-                const lightboxMedia = document.getElementById('works-lightbox-media');
-                const lightBoxName = document.getElementById('works-lightbox-name');
+                this.currentIndex -= 1;
 
-                if (currentLightboxIndex < 0) {
-                    currentLightboxIndex = currentMedia.length - 1;
+                if (this.currentIndex < 0) {
+                    this.currentIndex = currentMedia.length - 1;
+                    this.currentIndex = currentMediaName.length - 1;
                 }
-                let src = currentMedia[currentLightboxIndex];
-                let nameSrc = currentMediaName[currentLightboxIndex];
 
-                lightboxMedia.innerHTML = `${src}`;
-                lightBoxName.innerHTML = `${nameSrc}`
+                let src = currentMedia[this.currentIndex];
+                let nameSrc = currentMediaName[this.currentIndex];
+
+                lightBoxMedia.innerHTML = `${src}`;
+                lightBoxName.innerHTML = `${nameSrc}`;
             }
         });
-        return this
     }
 }

@@ -8,8 +8,7 @@ export default class VideoFactory {
         let eltVideo = document.createElement('video');
         eltVideo.setAttribute("controls", "controls")
         eltVideo.setAttribute('src', element.video);
-        eltVideo.setAttribute('alt', element.alt);
-        eltVideo.setAttribute('type', 'video/mp4');
+        eltVideo.setAttribute('role', 'button');
         eltVideo.className = 'ph-media';
 
         return eltVideo;

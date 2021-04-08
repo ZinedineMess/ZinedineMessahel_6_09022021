@@ -8,10 +8,12 @@ export default class GalleryFactory {
     constructor() {
         this.totalLike = 0;
     }
-    
-    builder(dataMedia, currentMedia, currentMediaName, currentLightboxIndex) {
+
+    builder(dataMedia) {
         const id = window.location.search.split('id=')[1];
         let mediaFactory = new MediaFactory();
+        let currentMedia = [];
+        let currentMediaName = [];
 
         dataMedia.forEach(element => {
             if (id == element.photographerId) {
@@ -38,10 +40,7 @@ export default class GalleryFactory {
                 currentMedia.push(mediaHTML.outerHTML);
                 currentMediaName.push(element.photoName);
                 (new Lightbox())
-                    .launchLightBox(currentMedia, currentMediaName, currentLightboxIndex)
-                    .switchPhWorks(currentMedia, currentMediaName, currentLightboxIndex)
-                    .closeLightBox()
-                    .lightboxKeyboard(currentMedia, currentMediaName, currentLightboxIndex);
+                .init(currentMedia, currentMediaName)
             }
         })
         return this;

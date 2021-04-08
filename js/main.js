@@ -6,20 +6,15 @@ import HomePageBuilder from './home/HomePageBuilder.js';
 
 // PHOTOGRAPHERS PAGES
 import PhotographerProfil from './photographers-page/PhotographerProfil.js';
-import DropDown from './photographers-page/DropDown.js';
+import DropDown from './photographers-page/dropDown.js';
 import MediaBuilder from './photographers-page/MediaBuilder.js';
-import Likes from './photographers-page/Likes.js';
-import {
-    Form,
-    FormFields
-} from './photographers-page/form.js';
-
+import Likes from './photographers-page/likes.js';
 
 (function appDispatch() {
-    if (window.location.pathname == '/index.html' || window.location.pathname == '/index.html#') {
+    if (window.location.pathname === "/ZinedineMessahel_6_09022021/" || window.location.pathname === "/ZinedineMessahel_6_09022021/index.html") {
         // HOMEPAGE (PHOTOGRAPHERS, SCROLL, FILTER)
         new HomePageBuilder().displayPhotographers();
-    } else if (window.location.pathname == '/photographers.html') {
+    } else if (window.location.pathname === "/ZinedineMessahel_6_09022021/photographers.html") {
         // PHOTOGRAPHER PROFIL HEADER
         new PhotographerProfil().displayPhotographerProfil();
 
@@ -31,9 +26,5 @@ import {
 
         // DROPDOWN MENU
         new DropDown().dropDown();
-
-        // CONTACT FORM & FORM FIELDS
-        new Form().modal();
-        new FormFields().fields();
     }
 })();

@@ -1,12 +1,12 @@
 /* PHOTOGRAPHERS SECTION */
-.article article {
+.articlePh {
     margin: .5rem;
     padding: .3rem;
     text-align: center;
     width: 22rem;
 }
 
-.article article a {
+.articlePh a {
     text-decoration: none;
 }
 
@@ -40,7 +40,7 @@
 section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 5rem;
     margin-top: 7rem;
     padding: 0;
