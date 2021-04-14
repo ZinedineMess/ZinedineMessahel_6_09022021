@@ -1,14 +1,12 @@
 'use strict';
 /////////////////////////////////////////
 
-import ApiFishEye from '../data/ApiFishEye.js';
-import Filter from './filter.js';
+import Filter from './Filter.js';
 import Scroll from './Scroll.js';
 
 // DISPLAY ALL PHOTOGRAPHERS BY DEFAULT
 export default class HomePageBuilder {
-    async displayPhotographers() {
-        let data = await (new ApiFishEye()).getDataFishEye();
+    async displayPhotographers(data) {
         let photographers = data.photographers;
         photographers.map(photographe => {
             const sectionPhotographers = document.getElementById('photographers');

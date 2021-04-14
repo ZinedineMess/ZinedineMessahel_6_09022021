@@ -66,7 +66,7 @@
     color: #fff;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     .ph-profil button {
         left: 0;
         margin-left: auto;
@@ -80,6 +80,13 @@
     .ph-profil {
         background-color: #FAFAFA;
         margin: 0 20px;
+    }
+
+    .ph-profil button {
+        height: 55px;
+        left: 42rem;
+        position: absolute;
+        top: 9.8rem;
     }
 }
 
@@ -98,13 +105,6 @@
     .ph-profil {
         background: #fafafa;
         padding: 2rem;
-    }
-
-    .ph-profil button {
-        height: 55px;
-        left: 42rem;
-        position: absolute;
-        top: 9.8rem;
     }
 
     .ph-profil img {

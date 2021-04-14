@@ -1,7 +1,6 @@
 'use strict';
 /////////////////////////////////////////
 
-import ApiFishEye from '../data/ApiFishEye.js';
 import {
     Form,
     FormFields
@@ -9,8 +8,7 @@ import {
 
 // DISPLAY PHOTOGRAPHERS PROFILS
 export default class PhotographerProfil {
-    async displayPhotographerProfil() {
-        let data = await (new ApiFishEye()).getDataFishEye();
+    async displayPhotographerProfil(data) {
         let photographersData = data.photographers;
         const id = window.location.search.split('id=')[1];
         const photographers = !id ? photographersData : photographersData.filter(photographer => photographer.id == id);
@@ -25,7 +23,7 @@ export default class PhotographerProfil {
                     <p >${element.tags.map(tag => `<a class="ph-tags" href="index.html">#${tag}</a>`).join(" ")}</p>
                 </div>
                 <button id="ph-contact" title='Contact Me'>Contactez-moi</button>
-                <img src="${element.portrait}" alt="${element.alt}">
+                <a href='#' title='${element.alt}'><img src="${element.portrait}" alt="${element.alt}"></a>
             </article>
             `
 

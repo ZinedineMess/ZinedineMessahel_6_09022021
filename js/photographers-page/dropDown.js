@@ -1,12 +1,11 @@
 'use strict';
 /////////////////////////////////////////
 
-import ApiFishEye from '../data/ApiFishEye.js';
 import GalleryFactory from '../Factory/GalleryFactory.js';
 
 export default class DropDown {
     // EVENTS
-    dropDown() {
+    dropDown(data) {
         const arrowOpen = document.getElementsByClassName('arrow-down-open');
         const arrowClose = document.getElementsByClassName('arrow-up-close');
         let hiddenSort = document.getElementsByClassName('hidden-sort');
@@ -15,7 +14,7 @@ export default class DropDown {
             arrowOpen[0].addEventListener('click', () => {
                 hiddenSort[0].style.display = 'block';
             });
-            this.sortMedias();
+            this.sortMedias(data);
         }
         if (arrowClose) {
             arrowClose[0].addEventListener('click', () => {
@@ -25,9 +24,8 @@ export default class DropDown {
     }
 
     // SORT MEDIAS (POPULARITY, DATA, TITLE)
-    async sortMedias() {
+    async sortMedias(data) {
         let mediaArraySort = [];
-        const data = await (new ApiFishEye()).getDataFishEye();
         const media = data.media;
         let btnSort = document.querySelector('.sort-btn');
         let hiddenSort = document.getElementsByClassName('hidden-sort');

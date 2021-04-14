@@ -21,7 +21,9 @@ export default class GalleryFactory {
                 let articlePhWork = document.createElement("article");
                 let mediaHTML = mediaFactory.renderMedia(element);
                 let workTemplate = `
+                <a href='#' title=${element.photoName}>
                 ${mediaHTML.outerHTML}
+                </a>
                 <div class="ph-work-elt-text">
                     <h2 class="ph-work-title">${element.photoName}</h2>
                     <span class="ph-work-price">${element.price} €</span>
