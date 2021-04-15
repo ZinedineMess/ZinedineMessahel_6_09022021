@@ -34,20 +34,15 @@ Ce projet s'inscrit dans le cadre de la formation "Développeur Front-End" propo
 
 * [Visual Studio Code](https://code.visualstudio.com) - Editeur de code.
 
-
 ## Outils
 
 * [CodeClimate](https://git-scm.com/download/win) - Revue de code automatisée et analyse de la qualité.
 
 * [AChecker](https://code.visualstudio.com) - Évaluation de l'accessibilité du site Web.
-
-  
-
 ## Structure
 
-![Structure FishEye]([https://res.cloudinary.com/dlpyn3wxf/image/upload/v1618494682/homepageuml_gefn0s.png](https://res.cloudinary.com/dlpyn3wxf/image/upload/v1618494682/homepageuml_gefn0s.png)) 
-
-![Structure FishEye]([[https://res.cloudinary.com/dlpyn3wxf/image/upload/v1618494695/ph-pages_z6qczr.png](https://res.cloudinary.com/dlpyn3wxf/image/upload/v1618494695/ph-pages_z6qczr.png))
+![Structure Homepage](https://res.cloudinary.com/dlpyn3wxf/image/upload/v1618494682/homepageuml_gefn0s.png)
+![Structure PH Pages](https://res.cloudinary.com/dlpyn3wxf/image/upload/v1618494695/ph-pages_z6qczr.png)
 
 **Data** : **récupére, de manière asynchrone, les données du JSON**.
 
