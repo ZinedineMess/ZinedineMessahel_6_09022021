@@ -2,14 +2,14 @@
 /////////////////////////////////////////
 
 // DATA
-import ApiFishEye from './Data/ApiFishEye.js';
+import ApiFishEye from './data/ApiFishEye.js';
 
 // HOMEPAGE
 import HomePageBuilder from './home/HomePageBuilder.js';
 
 // PH PAGES
 import PhotographerProfil from './photographers-page/PhotographerProfil.js';
-import DropDown from './photographers-page/DropDown.js';
+import DropDown from './photographers-page/dropDown.js';
 import MediaBuilder from './photographers-page/MediaBuilder.js';
 
 (function appDispatch() {

@@ -2,7 +2,7 @@
 /////////////////////////////////////////
 
 import GalleryFactory from '../Factory/GalleryFactory.js';
-import Likes from './Likes.js';
+import Likes from './likes.js';
 
 export default class MediaBuilder {
 
