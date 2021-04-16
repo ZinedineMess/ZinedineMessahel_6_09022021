@@ -20,8 +20,10 @@ export default class Likes {
 
                 if (isLiked) {
                     e.target.classList.remove('isLiked');
+                    e.target.classList.replace('fas', 'far');
                 } else {
                     e.target.classList.add('isLiked');
+                    e.target.classList.replace('far', 'fas');
                 }
             }
         })

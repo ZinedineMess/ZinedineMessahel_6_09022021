@@ -31,7 +31,7 @@ export default class GalleryFactory {
                     <span class="ph-work-like">
                         <a class="like-counter">${element.likes}</a>
                     </span>
-                    <i class="fas fa-heart heart-btn" aria-label='likes' role="button" data-value="${element.likes}"></i>
+                    <i class="far fa-heart heart-btn" aria-label='likes' role="button" data-value="${element.likes}"></i>
                     </div>
                 </div>
                 `
