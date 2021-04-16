@@ -1,8 +1,8 @@
 'use strict';
 /////////////////////////////////////////
 
-import GalleryFactory from '../factory/GalleryFactory.js';
-import LikeSubscriber from './likes.js';
+import GalleryFactory from '../Factory/GalleryFactory.js';
+import LikeSubscriber from './Likes.js';
 
 export default class MediaBuilder {
     photographersMedias(data) {
