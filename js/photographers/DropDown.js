@@ -1,13 +1,13 @@
 'use strict';
 /////////////////////////////////////////
 
-import GalleryFactory from '../Factory/GalleryFactory.js';
+import GalleryFactory from '../factory/GalleryFactory.js';
 
-export default class DropDown {
+export default class DropDownMenu {
     // EVENTS
     dropDown(data) {
-        const arrowOpen = document.getElementsByClassName('arrow-down-open');
-        const arrowClose = document.getElementsByClassName('arrow-up-close');
+        let arrowOpen = document.getElementsByClassName('sort-btn');
+        let arrowClose = document.getElementsByClassName('arrow-up-close');
         let hiddenSort = document.getElementsByClassName('hidden-sort');
 
         if (arrowOpen) {
@@ -24,12 +24,12 @@ export default class DropDown {
     }
 
     // SORT MEDIAS (POPULARITY, DATA, TITLE)
-    async sortMedias(data) {
+    sortMedias(data) {
         let mediaArraySort = [];
-        const media = data.media;
+        let media = data.media;
         let btnSort = document.querySelector('.sort-btn');
         let hiddenSort = document.getElementsByClassName('hidden-sort');
-        const sortBtn = Array.from(document.getElementsByClassName('sort'));
+        let sortBtn = Array.from(document.getElementsByClassName('sort'));
 
         sortBtn.forEach((btn, index) => btn.addEventListener('click', () => {
             hiddenSort[0].style.display = "none";
@@ -58,11 +58,11 @@ export default class DropDown {
                     }
                 })
             }
-            this.displayMediaSort(mediaArraySort);
+            this.displaySortMedia(mediaArraySort);
         }));
     }
 
-    displayMediaSort(mediaArraySort) {
+    displaySortMedia(mediaArraySort) {
         // DISPLAY PHOTOGRAPHERS WORKS WITH SORT
         document.getElementById("ph-works").innerHTML = "";
         new GalleryFactory().builder(mediaArraySort);

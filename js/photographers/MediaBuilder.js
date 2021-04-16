@@ -1,17 +1,15 @@
 'use strict';
 /////////////////////////////////////////
 
-import GalleryFactory from '../Factory/GalleryFactory.js';
-import Likes from './likes.js';
+import GalleryFactory from '../factory/GalleryFactory.js';
+import LikeSubscriber from './likes.js';
 
 export default class MediaBuilder {
-
-    async photographersMedias(data) {
+    photographersMedias(data) {
         let media = data.media;
-
         let gallery = new GalleryFactory().builder(media);
         this.boxLikesAndPrice(gallery.totalLike, data.photographers);
-        new Likes().likes();
+        new LikeSubscriber();
     }
 
     boxLikesAndPrice(totalLike, photographers) {

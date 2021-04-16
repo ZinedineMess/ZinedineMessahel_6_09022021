@@ -6,13 +6,13 @@ import Scroll from './Scroll.js';
 
 // DISPLAY ALL PHOTOGRAPHERS BY DEFAULT
 export default class HomePageBuilder {
-    async displayPhotographers(data) {
+    displayPhotographers(data) {
         let photographers = data.photographers;
         photographers.map(photographe => {
-            const sectionPhotographers = document.getElementById('photographers');
-            const articlePhotographers = document.createElement('article');
+            let sectionPhotographers = document.getElementById('photographers');
+            let articlePhotographers = document.createElement('article');
             articlePhotographers.className = photographe.tags.join(' ') + ' articlePh';
-            const templatePhotographer = `
+            let templatePhotographer = `
             <a href="photographers.html?id=${photographe.id}" title="${photographe.name}">
                 <img src="${photographe.portrait}" alt="${photographe.alt}">
                 <h2 class="name">${photographe.name}</h2>
@@ -27,7 +27,7 @@ export default class HomePageBuilder {
             sectionPhotographers.appendChild(articlePhotographers);
             articlePhotographers.innerHTML = templatePhotographer;
         })
-        new Filter().filter();
-        new Scroll().scrollButtonEvent();
+        new Filter().filterTags();
+        new Scroll().scrollButton();
     }
 }

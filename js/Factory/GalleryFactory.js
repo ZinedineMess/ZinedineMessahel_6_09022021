@@ -2,7 +2,7 @@
 /////////////////////////////////////////
 
 import MediaFactory from './MediaFactory.js';
-import Lightbox from '../photographers-page/LightBox.js';
+import Lightbox from '../photographers/LightBox.js';
 
 export default class GalleryFactory {
     constructor() {

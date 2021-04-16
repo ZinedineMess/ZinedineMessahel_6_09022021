@@ -2,15 +2,15 @@
 /////////////////////////////////////////
 
 // DATA
-import ApiFishEye from './data/ApiFishEye.js';
+import ApiFishEye from './provider/ApiFishEye.js';
 
 // HOMEPAGE
 import HomePageBuilder from './home/HomePageBuilder.js';
 
 // PH PAGES
-import PhotographerProfil from './photographers-page/PhotographerProfil.js';
-import DropDown from './photographers-page/dropDown.js';
-import MediaBuilder from './photographers-page/MediaBuilder.js';
+import PhotographerProfil from './photographers/PhotographerProfil.js';
+import DropDownMenu from './photographers/dropDown.js';
+import MediaBuilder from './photographers/MediaBuilder.js';
 
 (function appDispatch() {
     new ApiFishEye().getDataFishEye().then((data) => {
@@ -19,15 +19,14 @@ import MediaBuilder from './photographers-page/MediaBuilder.js';
             new PhotographerProfil().displayPhotographerProfil(data);
 
             // DROPDOWN MENU
-            new DropDown().dropDown(data);
+            new DropDownMenu().dropDown(data);
 
             //PHOTOGRAPHER GALLERY & LIKES BOX
             new MediaBuilder().photographersMedias(data);
-
-        } else {
-            // HOMEPAGE (PHOTOGRAPHERS, SCROLL, FILTER)
-            new HomePageBuilder().displayPhotographers(data);
+            return
         }
+        // HOMEPAGE (PHOTOGRAPHERS, SCROLL, FILTER)
+        new HomePageBuilder().displayPhotographers(data);
     }).catch(() => {
         console.error('Failed to load ApiFishEye');
     })
