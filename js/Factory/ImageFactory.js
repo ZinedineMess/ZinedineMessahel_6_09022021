@@ -2,8 +2,7 @@
 /////////////////////////////////////////
 
 export default class ImageFactory {
-
-    // CREATE ELEMENT IMG
+    // CREATE ELEMENT IMG WITH SRC, ALT, ROLE
     createHTML(element) {
         let eltImage = document.createElement('img');
         eltImage.setAttribute('src', element.image);

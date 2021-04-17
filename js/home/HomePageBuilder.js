@@ -6,6 +6,7 @@ import Scroll from './Scroll.js';
 
 // DISPLAY ALL PHOTOGRAPHERS BY DEFAULT
 export default class HomePageBuilder {
+    // Build the photographers section, call the 'filtertags' function and the 'passer au contenu' button
     displayPhotographers(data) {
         let photographers = data.photographers;
         photographers.map(photographe => {

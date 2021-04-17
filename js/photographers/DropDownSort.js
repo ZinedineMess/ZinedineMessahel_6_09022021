@@ -4,7 +4,7 @@
 import GalleryFactory from '../Factory/GalleryFactory.js';
 
 export default class DropDownMenu {
-    // EVENTS
+    // Events, open/close the dropDownMenu
     dropDown(data) {
         let arrowOpen = document.getElementsByClassName('sort-btn');
         let arrowClose = document.getElementsByClassName('arrow-up-close');

@@ -8,7 +8,8 @@ export default class GalleryFactory {
     constructor() {
         this.totalLike = 0;
     }
-
+    
+    // build the gallery with the different medias and the lightbox
     builder(dataMedia) {
         const id = window.location.search.split('id=')[1];
         let mediaFactory = new MediaFactory();

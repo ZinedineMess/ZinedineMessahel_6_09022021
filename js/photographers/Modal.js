@@ -2,6 +2,20 @@
 /////////////////////////////////////////
 
 export default class Modal {
+    // Events, launch/close the modal by clicking on the 'contact me' button
+    modal(data) {
+        let modalBtn = document.getElementById("ph-contact");
+        let closeBtn = document.getElementsByClassName('close-form-icon');
+
+        if (modalBtn) {
+            modalBtn.addEventListener('click', this.launchModal);
+            this.formPhName(data);
+        }
+        if (closeBtn) {
+            closeBtn[0].addEventListener('click', this.closeModal);
+        }
+    }
+
     // LAUNCH MODAL
     launchModal() {
         let modalbg = document.getElementById("form-dialog");
@@ -23,18 +37,5 @@ export default class Modal {
         let phName = document.getElementById('ph-form-name');
         let phNameTemplate = `${photographers[0].name}`
         phName.innerHTML = phNameTemplate;
-    }
-
-    modal(data) {
-        let modalBtn = document.getElementById("ph-contact");
-        let closeBtn = document.getElementsByClassName('close-form-icon');
-
-        if (modalBtn) {
-            modalBtn.addEventListener('click', this.launchModal);
-            this.formPhName(data);
-        }
-        if (closeBtn) {
-            closeBtn[0].addEventListener('click', this.closeModal);
-        }
     }
 }

@@ -2,6 +2,7 @@
 /////////////////////////////////////////
 
 export default class LikeSubscriber {
+    // add or remove a 'like' when clicking on the 'like' icon   
     constructor() {
         let media = document.getElementById('ph-works');
 
@@ -14,7 +15,7 @@ export default class LikeSubscriber {
                 let counterLike = e.target.parentNode.firstElementChild.firstElementChild;
                 let likeValue = parseInt(counterLike.innerHTML);
                 let isLiked = -1 != classListTarget.indexOf('isLiked');
-                
+
                 document.getElementById('total-likes').innerHTML = isLiked ? --totalLikes : ++totalLikes;
                 counterLike.innerHTML = isLiked ? --likeValue : ++likeValue;
 

@@ -22,7 +22,7 @@ export default class Filter {
         });
     }
 
-    // GET ACTIVE FILTER
+    // retrieve the filters with the 'actived' class and place them in the 'filterSelected' array    
     getActiveFilters() {
         let currentFilters = document.querySelectorAll('ul li.actived');
         let filterSelected = [];
@@ -34,7 +34,7 @@ export default class Filter {
         return filterSelected;
     }
 
-    // OWN ALL FILTERS
+    // compare/check if 'filters' has the same value as the 'article' class    
     ownAllFilters(article) {
         let filters = this.getActiveFilters();
         let classValue = article.classList.value;

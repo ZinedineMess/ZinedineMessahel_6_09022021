@@ -6,6 +6,7 @@ export default class LightBox {
         this.currentIndex = 0;
     }
 
+    // initialize the lightbox when clicking on a media, call the functions allowing to navigate in the lightbox
     init(currentMedia, currentMediaName) {
         let getMedias = Array.from(document.getElementsByClassName('ph-media'));
         getMedias.forEach((mediaWorks, index) => mediaWorks.addEventListener("click", () => {
@@ -26,6 +27,7 @@ export default class LightBox {
         return this
     }
 
+    // return to previous media
     previous(elt, media, name) {
         elt.addEventListener('click', () => {
             this.currentIndex -= 1;
@@ -45,6 +47,7 @@ export default class LightBox {
         })
     }
 
+    // turn to the next media
     next(elt, media, name) {
         elt.addEventListener('click', () => {
             this.currentIndex += 1;

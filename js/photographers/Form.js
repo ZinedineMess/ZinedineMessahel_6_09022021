@@ -48,6 +48,7 @@ export default class Form {
         this.checkMessage(message);
     }
 
+    // Check FirstName and LastName
     checkNames(elt, regex) {
         if (elt.value.trim().length < 2 || elt.value.trim() === "" || !elt.value.match(regex)) {
             elt.parentElement.setAttribute('data-error-visible', 'true');

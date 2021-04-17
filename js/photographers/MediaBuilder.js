@@ -5,6 +5,7 @@ import GalleryFactory from '../Factory/GalleryFactory.js';
 import LikeSubscriber from './Likes.js';
 
 export default class MediaBuilder {
+    // call the GalleryFactory to create the media section with 'Like' function and the box
     photographersMedias(data) {
         let media = data.media;
         let gallery = new GalleryFactory().builder(media);
@@ -12,6 +13,7 @@ export default class MediaBuilder {
         new LikeSubscriber();
     }
 
+    // creates a box containing the total number of likes and the photographer's price
     boxLikesAndPrice(totalLike, photographers) {
         const id = window.location.search.split('id=')[1];
 
