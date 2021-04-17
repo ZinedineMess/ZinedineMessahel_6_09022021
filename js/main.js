@@ -9,7 +9,7 @@ import HomePageBuilder from './home/HomePageBuilder.js';
 
 // PH PAGES
 import PhotographerProfil from './photographers/PhotographerProfil.js';
-import DropDownMenu from './photographers/DropDown.js';
+import DropDownMenu from './photographers/dropDown.js';
 import MediaBuilder from './photographers/MediaBuilder.js';
 
 (function appDispatch() {
