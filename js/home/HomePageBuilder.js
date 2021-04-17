@@ -1,7 +1,7 @@
 'use strict';
 /////////////////////////////////////////
 
-import Filter from './filter.js';
+import Filter from './FilterTags.js';
 import Scroll from './Scroll.js';
 
 // DISPLAY ALL PHOTOGRAPHERS BY DEFAULT
