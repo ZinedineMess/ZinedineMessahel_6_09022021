@@ -14,12 +14,12 @@
 </head>
 
 <body>
-    <header role="banner" aria-hidden="false">
+    <header role="banner">
         <a href="index.html" title="HomePage"><img
                 src="https://res.cloudinary.com/dps3eww2i/image/upload/v1609005020/P6-img/logo.png"
                 alt="FishEye Home Page"></a>
     </header>
-    <main aria-hidden="false">
+    <main>
         <!-- HEADER -->
         <header id="ph-profil" aria-label="photographer information">
             <section id="ph-profil-header"></section>
@@ -30,9 +30,9 @@
             <span id="sort-text">Trier par</span>
             <div id="sort-wrapper">
                 <button class="sort-btn" aria-haspopup="listbox">Popularité</button>
-                <i class="fas fa-chevron-down arrow-down-open"></i>
+                <span class="fas fa-chevron-down arrow-down-open" role='button'></span>
                 <ul class="hidden-sort" role="listbox">
-                    <li class="sort" role='option'>Popularité <i class="fas fa-chevron-up arrow-up-close"></i>
+                    <li class="sort" role='option'>Popularité <span class="fas fa-chevron-up arrow-up-close"></span>
                     </li>
                     <li class="sort" role='option'>Date</li>
                     <li class="sort" role='option'>Tître</li>
@@ -89,9 +89,9 @@
         <!--LIGHTBOX-->
         <aside id="works-lightbox" aria-hidden="true">
             <article id="lightbox-body" role='dialog'>
-                <i class="fas fa-times close-lightbox-icon" role="button" title="Close dialog"></i>
-                <i class="fas fa-chevron-left left-arrow-lightbox" role="button" title="Previous image"></i>
-                <i class="fas fa-chevron-right right-arrow-lightbox" role="button" title="Next image"></i>
+                <span class="fas fa-times close-lightbox-icon" role="button" title="Close dialog"></span>
+                <span class="fas fa-chevron-left left-arrow-lightbox" role="button" title="Previous image"></span>
+                <span class="fas fa-chevron-right right-arrow-lightbox" role="button" title="Next image"></span>
                 <div id="works-lightbox-media"></div>
                 <div id="works-lightbox-name"></div>
             </article>

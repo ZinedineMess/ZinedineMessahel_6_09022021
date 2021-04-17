@@ -1,17 +1,15 @@
 'use strict';
 /////////////////////////////////////////
 
-import ApiFishEye from '../data/ApiFishEye.js';
 import GalleryFactory from '../Factory/GalleryFactory.js';
+import LikeSubscriber from './Likes.js';
 
 export default class MediaBuilder {
-
-    async photographersMedias() {
-        let data = await (new ApiFishEye()).getDataFishEye();
+    photographersMedias(data) {
         let media = data.media;
-
         let gallery = new GalleryFactory().builder(media);
         this.boxLikesAndPrice(gallery.totalLike, data.photographers);
+        new LikeSubscriber();
     }
 
     boxLikesAndPrice(totalLike, photographers) {

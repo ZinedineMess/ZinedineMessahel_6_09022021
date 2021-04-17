@@ -7,7 +7,7 @@ export default class LightBox {
     }
 
     init(currentMedia, currentMediaName) {
-        const getMedias = Array.from(document.getElementsByClassName('ph-media'));
+        let getMedias = Array.from(document.getElementsByClassName('ph-media'));
         getMedias.forEach((mediaWorks, index) => mediaWorks.addEventListener("click", () => {
             let lightBoxMedia = document.getElementById('works-lightbox-media');
             let lightBoxName = document.getElementById('works-lightbox-name');
@@ -29,8 +29,8 @@ export default class LightBox {
     previous(elt, media, name) {
         elt.addEventListener('click', () => {
             this.currentIndex -= 1;
-            const lightBoxMedia = document.getElementById('works-lightbox-media');
-            const lightBoxName = document.getElementById('works-lightbox-name');
+            let lightBoxMedia = document.getElementById('works-lightbox-media');
+            let lightBoxName = document.getElementById('works-lightbox-name');
 
             if (this.currentIndex < 0) {
                 this.currentIndex = media.length - 1;
@@ -48,8 +48,8 @@ export default class LightBox {
     next(elt, media, name) {
         elt.addEventListener('click', () => {
             this.currentIndex += 1;
-            const lightBoxMedia = document.getElementById('works-lightbox-media');
-            const lightBoxName = document.getElementById('works-lightbox-name');
+            let lightBoxMedia = document.getElementById('works-lightbox-media');
+            let lightBoxName = document.getElementById('works-lightbox-name');
 
             if (this.currentIndex > name.length - 1) {
                 this.currentIndex = 0;
@@ -65,7 +65,7 @@ export default class LightBox {
 
     close() {
         document.querySelector('.close-lightbox-icon').addEventListener('click', () => {
-            const lightbox = document.getElementById('works-lightbox');
+            let lightbox = document.getElementById('works-lightbox');
 
             lightbox.style.display = 'none';
         })
@@ -73,8 +73,8 @@ export default class LightBox {
 
     keyboard(currentMedia, currentMediaName) {
         document.addEventListener('keydown', (key) => {
-            const lightBoxMedia = document.getElementById('works-lightbox-media');
-            const lightBoxName = document.getElementById('works-lightbox-name');
+            let lightBoxMedia = document.getElementById('works-lightbox-media');
+            let lightBoxName = document.getElementById('works-lightbox-name');
 
             // ESCAPE TO CLOSE
             if (key.code == "Escape") {

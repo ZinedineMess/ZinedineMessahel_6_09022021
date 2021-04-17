@@ -1,51 +1,10 @@
 'use strict';
 /////////////////////////////////////////
 
-export class Form {
-    // LAUNCH MODAL
-    launchModal() {
-        let modalbg = document.getElementById("form-dialog");
-
-        modalbg.style.display = 'block';
-    }
-
-    // CLOSE MODAL
-    closeModal() {
-        let modalbg = document.getElementById("form-dialog");
-
-        modalbg.style.display = 'none';
-    }
-
-    // DISPLAY PH NAMES IN FORM
-    formPhName(photographersData) {
-        let id = window.location.search.split('id=')[1];
-        let photographers = !id ? photographersData : photographersData.filter(photographer => photographer.id == id);
-
-        photographers.forEach(element => {
-            let phName = document.getElementById('ph-form-name');
-            let phNameTemplate = `${element.name}`
-            phName.innerHTML = phNameTemplate;
-        })
-    }
-
-    modal(photographersData) {
-        let modalBtn = document.getElementById("ph-contact");
-        let closeBtn = document.getElementsByClassName('close-form-icon');
-
-        if (modalBtn) {
-            modalBtn.addEventListener('click', this.launchModal);
-            this.formPhName(photographersData);
-        }
-        if (closeBtn) {
-            closeBtn[0].addEventListener('click', this.closeModal);
-        }
-    }
-}
-
-export class FormFields {
+export default class Form {
     fields() {
         // DOM ELEMENTS FORM FIELDS VALIDATION
-        const form = document.getElementById('contact-form');
+        let form = document.getElementById('contact-form');
         let firstName = document.getElementById('first-name');
         let lastName = document.getElementById('last-name');
         let email = document.getElementById('email');

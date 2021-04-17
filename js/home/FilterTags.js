@@ -4,9 +4,9 @@
 // FUNCTION FILTER TAGS
 export default class Filter {
     // FILTER TAGS
-    filter() {
-        const filtres = document.querySelector('ul');
-        const articles = document.querySelectorAll('.articlePh');
+    filterTags() {
+        let filtres = document.querySelector('ul');
+        let articles = document.querySelectorAll('.articlePh');
 
         // EVENT LISTENER ON CLICK LI
         filtres.addEventListener('click', event => {
@@ -18,7 +18,7 @@ export default class Filter {
                 event.target.classList.remove('actived')
             }
 
-            this.refreshArticles(articles);
+            this.sortDomArticle(articles);
         });
     }
 
@@ -47,7 +47,7 @@ export default class Filter {
     }
 
     // SHOW OR HIDE ARTICLES
-    refreshArticles(articles) {
+    sortDomArticle(articles) {
         articles.forEach((article) => {
             if (this.ownAllFilters(article)) {
                 article.style.display = 'block';

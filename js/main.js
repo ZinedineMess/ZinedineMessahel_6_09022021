@@ -1,30 +1,33 @@
 'use strict';
 /////////////////////////////////////////
 
-// HOME
+// DATA
+import ApiFishEye from './provider/ApiFishEye.js';
+
+// HOMEPAGE
 import HomePageBuilder from './home/HomePageBuilder.js';
 
-// PHOTOGRAPHERS PAGES
-import PhotographerProfil from './photographers-page/PhotographerProfil.js';
-import DropDown from './photographers-page/dropDown.js';
-import MediaBuilder from './photographers-page/MediaBuilder.js';
-import Likes from './photographers-page/likes.js';
+// PH PAGES
+import PhotographerProfil from './photographers/PhotographerProfil.js';
+import DropDownMenu from './photographers/DropDownSort.js';
+import MediaBuilder from './photographers/MediaBuilder.js';
 
 (function appDispatch() {
-    if (window.location.pathname === "/ZinedineMessahel_6_09022021/" || window.location.pathname === "/ZinedineMessahel_6_09022021/index.html") {
+    new ApiFishEye().getDataFishEye().then((data) => {
+        if (window.location.pathname.includes("/photographers.html")) {
+            // PHOTOGRAPHER PROFIL HEADER
+            new PhotographerProfil().displayPhotographerProfil(data);
+
+            // DROPDOWN MENU
+            new DropDownMenu().dropDown(data);
+
+            //PHOTOGRAPHER GALLERY & LIKES BOX
+            new MediaBuilder().photographersMedias(data);
+            return
+        }
         // HOMEPAGE (PHOTOGRAPHERS, SCROLL, FILTER)
-        new HomePageBuilder().displayPhotographers();
-    } else if (window.location.pathname === "/ZinedineMessahel_6_09022021/photographers.html") {
-        // PHOTOGRAPHER PROFIL HEADER
-        new PhotographerProfil().displayPhotographerProfil();
-
-        //PHOTOGRAPHER GALLERY & LIKES BOX
-        new MediaBuilder().photographersMedias();
-
-        // LIKES
-        new Likes().likes();
-
-        // DROPDOWN MENU
-        new DropDown().dropDown();
-    }
+        new HomePageBuilder().displayPhotographers(data);
+    }).catch(() => {
+        console.error('Failed to load ApiFishEye');
+    })
 })();

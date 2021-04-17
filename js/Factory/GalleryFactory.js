@@ -2,7 +2,7 @@
 /////////////////////////////////////////
 
 import MediaFactory from './MediaFactory.js';
-import Lightbox from '../photographers-page/LightBox.js';
+import Lightbox from '../photographers/LightBox.js';
 
 export default class GalleryFactory {
     constructor() {
@@ -21,7 +21,9 @@ export default class GalleryFactory {
                 let articlePhWork = document.createElement("article");
                 let mediaHTML = mediaFactory.renderMedia(element);
                 let workTemplate = `
+                <a href='#' title=${element.photoName}>
                 ${mediaHTML.outerHTML}
+                </a>
                 <div class="ph-work-elt-text">
                     <h2 class="ph-work-title">${element.photoName}</h2>
                     <span class="ph-work-price">${element.price} €</span>
@@ -29,7 +31,7 @@ export default class GalleryFactory {
                     <span class="ph-work-like">
                         <a class="like-counter">${element.likes}</a>
                     </span>
-                    <i class="fas fa-heart heart-btn" aria-label='likes' role="button" data-value="${element.likes}"></i>
+                    <i class="far fa-heart heart-btn" aria-label='likes' role="button" data-value="${element.likes}"></i>
                     </div>
                 </div>
                 `

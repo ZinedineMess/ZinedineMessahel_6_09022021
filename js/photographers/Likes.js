@@ -1,9 +1,9 @@
 'use strict';
 /////////////////////////////////////////
 
-export default class Likes {
-    likes() {
-        const media = document.getElementById('ph-works');
+export default class LikeSubscriber {
+    constructor() {
+        let media = document.getElementById('ph-works');
 
         media.addEventListener('click', (e) => {
             let classListTarget = typeof e.target.classList === 'undefined' ? [] : e.target.classList.value.split(' ');
@@ -20,8 +20,10 @@ export default class Likes {
 
                 if (isLiked) {
                     e.target.classList.remove('isLiked');
+                    e.target.classList.replace('fas', 'far');
                 } else {
                     e.target.classList.add('isLiked');
+                    e.target.classList.replace('far', 'fas');
                 }
             }
         })
